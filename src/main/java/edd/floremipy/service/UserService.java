@@ -1,4 +1,4 @@
-package edd.floremipy.controller;
+package edd.floremipy.service;
 
 import java.util.ArrayList;
 
