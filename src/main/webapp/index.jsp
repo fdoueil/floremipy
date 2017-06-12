@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link type="text/css" rel="stylesheet" href="css/index.css" />
+<link type="text/css" rel="stylesheet" href="css/main.css" />
 
 <title>FloreMipy</title>
 </head>
@@ -13,22 +13,18 @@
 <table id="example" class="display" cellspacing="0" width="100%">
         <thead>
             <tr>
-                <th>First name</th>
-                <th>Last name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th>Ref</th>
+                <th>LNom</th>
+                <th>Prix</th>
+                <th>Quantite</th>
             </tr>
         </thead>
         <tfoot>
             <tr>
-                <th>First name</th>
-                <th>Last name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th>Ref</th>
+                <th>Nom</th>
+                <th>Prix</th>
+                <th>Quantite</th>
             </tr>
         </tfoot>
     </table>
