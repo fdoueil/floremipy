@@ -12,12 +12,21 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
  
 <link type="text/css" rel="stylesheet" href="css/main.css" />
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <title>FloreMipy</title>
 
 </head>
 <body>
-
+<div class="row">
+				<div class="col-md-3">
+					<c:import url="/WEB-INF/menu.jsp" />
+				</div>
+				<div class="col-md-9">	
+					<div class="jumbotron">
+		    			<h3>Bienvenue dans FloreMiPy</h3> 
+		  			</div>
+		  		</div>	
+</div>				
 <table id="example" class="display" cellspacing="0" width="100%">
         <thead>
             <tr>
