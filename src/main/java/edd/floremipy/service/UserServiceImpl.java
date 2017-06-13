@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserServiceInterface {
 		String retour = login;
 		User userLogge = listeDesUsers.get(login);
 		if (userLogge==null) {
-			retour = "PB:Login:Erreur 001:Utilisateur inconnu";
+			retour = "PB:LoginController:Erreur 001:Utilisateur inconnu";
 		} else
 		{
 			if (!userLogge.getPwd().equals(pwd)) {

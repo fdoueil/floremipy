@@ -147,7 +147,11 @@ margin-left: -15px;
 						    </tbody>
 					  	</table>
 					  </div>	
-					  
+					  <div class="col-sm-6 form-group">
+								<button class="btn btn-default btn-md col-sm-8" value="Commander">
+								<a style="vertical-align: middle" href=<c:url value="articleList/addCommande"/>>Commander <span class="glyphicon glyphicon-ok"></span></a>
+								</button>
+							</div>
 				 </div> 
 			</div>
 		</form>				 
