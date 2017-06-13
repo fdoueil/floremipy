@@ -1,10 +1,4 @@
-{
-  "draw": 1,
-  "recordsTotal": 57,
-  "recordsFiltered": 57,
-  "data": [
-    [
-      "RefAA1",
+var dataSet={["RefAA1",
       "Palmier",
       "29",
       "100"
@@ -44,5 +38,4 @@
         "1",
         "1000000"
     ]
-  ]
-}
+};
