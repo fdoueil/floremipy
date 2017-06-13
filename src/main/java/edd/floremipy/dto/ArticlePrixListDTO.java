@@ -14,6 +14,19 @@ public class ArticlePrixListDTO {
 	}
 
 
+	public ArticlePrixListDTO(String name, String description, float priceValue, int quantityInStock, int quantityOrder,
+			int id, String img) {
+		super();
+		this.name = name;
+		Description = description;
+		this.priceValue = priceValue;
+		this.quantityInStock = quantityInStock;
+		this.quantityOrder = quantityOrder;
+		this.id = id;
+		this.img = img;
+	}
+
+
 	public String getName() {
 		return this.name;
 	}
