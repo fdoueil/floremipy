@@ -11,14 +11,8 @@ public class ArticlePrixListDTO {
 	public String img;
 
 	public ArticlePrixListDTO() {
-		this.name = "Article Test";
-		this.Description = "Article cr�� automatiquement";
-		this.priceValue = 10.26F;
-		this.quantityInStock = 12;
-		this.quantityOrder = 0;
-		this.id = -9999;
-		this.img = "Olivier.jpg";
 	}
+
 
 	public String getName() {
 		return this.name;

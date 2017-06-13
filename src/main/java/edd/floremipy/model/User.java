@@ -7,14 +7,17 @@ public class User {
 	private String email;
 	private String pwd;
 	private UserRole role;   
+	private Long idCustomer;
 	
-	public User(Long id, String identifiant, String email, String pwd, UserRole unRole) {
+	
+	public User(Long id, String identifiant, String email, String pwd, UserRole unRole, Long idCustomer) {
 		super();
 		Id = id;
 		this.identifiant = identifiant;
 		this.email = email;
 		this.pwd = pwd;
 		this.role = unRole;
+		this.idCustomer = idCustomer;
 	}
 	
 	public UserRole getRole() {
@@ -57,5 +60,13 @@ public class User {
 
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
+	}
+
+	public Long getIdCustomer() {
+		return idCustomer;
+	}
+
+	public void setIdCustomer(Long idCustomer) {
+		this.idCustomer = idCustomer;
 	}
 }
