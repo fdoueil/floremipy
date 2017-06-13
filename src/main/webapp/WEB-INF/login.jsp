@@ -28,16 +28,16 @@
 			</div>
 			<div class="container" style="width: 400px;">
 				<div class="form-group">
-					<label for="nom">Adresse email <span class="requis">*</span></label>
-					<input type="email" class="form-control" name="email" id="nom"
+					<label for="email">Adresse email <span class="requis">*</span></label>
+					<input type="email" class="form-control" name="email" id="email"
 						value="${form.email}" size="20" maxlength="60" /> <span
 						class="erreur">${error['email']}</span> <br />
 				</div>
 
 				<div class="form-group">
-					<label for="motdepasse">Mot de passe <span class="requis">*</span></label>
+					<label for="pwd">Mot de passe <span class="requis">*</span></label>
 					<input type="password" class="form-control" name="pwd"
-						id="motdepasse" value="" size="20" maxlength="20" /> <span
+						id="pwd" value="" size="20" maxlength="20" /> <span
 						class="erreur">${error['motdepasse']}</span> <br />
 				</div>
 
