@@ -39,7 +39,7 @@ public class UserServiceImplTest {
 	@Test
 	public void testAuthenticateLoginInexistant() {
 		// On retourne utilisateur inconnu si login incorrect
-		String expected = "PB:Login:Erreur 001:Utilisateur inconnu";
+		String expected = "PB:LoginController:Erreur 001:Utilisateur inconnu";
 		String actual =  UserServiceImpl.getInstance().authenticate("INCONNU@xyz.com", "11");
 		assertEquals(expected,actual);		
 	}
