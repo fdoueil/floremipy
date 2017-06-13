@@ -17,14 +17,14 @@
 
 
 <body>
-	<div class="container-fluid bg-grey" id="menu">	
-				<div class="container-fluid bg-grey" id="menu">
-				<ul class="nav nav-pills nav-stacked">
-  					<li><a href=<c:url value="/"/>>Accueil</a></li>
-  					<li><a href=<c:url value="/articleList"/>>Liste des articles</a></li>
-  					<li><a href=<c:url value="choixModeLivraison"/>>Choix du mode de livraison</a></li>
-  					<li><a href=<c:url value="commandeList"/>>Voir les commandes à livrer</a></li>
-				</ul>
-			</div>	
+	<div class="container-fluid bg-grey" id="menu">
+		<img src="/images/logo_floremipy.png">
+		<ul class="nav nav-pills nav-stacked">
+					<li><a href=<c:url value="/"/>>Accueil</a></li>
+                  <li><a href=<c:url value="/login"/>>Connexion</a></li>
+                  <li><a href=<c:url value="/articleList"/>>Liste des articles</a></li>
+                  <li><a href=<c:url value="choixModeLivraison"/>>Choix du mode de livraison</a></li>
+		</ul>
+	</div>	
 </body>
 </html>
