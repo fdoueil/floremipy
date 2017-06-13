@@ -8,6 +8,7 @@ public interface ArticlePrixListDTOServiceInterface {
 
 	public ArrayList<ArticlePrixListDTO> initListeArticleHaut();
 	public ArrayList<ArticlePrixListDTO> initListeArticleBas();
+	public void creeCommande(ArrayList<ArticlePrixListDTO> articlePrixDTOListeHaut);
 	public void deplaceDuHautVersLeBas(ArrayList<ArticlePrixListDTO> articlePrixDTOListeHaut, ArrayList<ArticlePrixListDTO> articlePrixDTOListeBas, int idArticlePrixToAdd);
 	public void deplaceDuBasVersLeHaut(ArrayList<ArticlePrixListDTO> articlePrixDTOListeHaut, ArrayList<ArticlePrixListDTO> articlePrixDTOListeBas, int idArticlePrixToDel);
 

@@ -30,11 +30,18 @@ public class ArticlePrixListDTOServiceImplementation implements ArticlePrixListD
 		return this.listeInitBas;
 	}
 
+	@Override
 	public void deplaceDuHautVersLeBas(ArrayList<ArticlePrixListDTO> articlePrixDTOListeHaut,
 			ArrayList<ArticlePrixListDTO> articlePrixDTOListeBas, int idArticlePrixToAdd) {
 	}
 
+	@Override
 	public void deplaceDuBasVersLeHaut(ArrayList<ArticlePrixListDTO> articlePrixDTOListeHaut,
 			ArrayList<ArticlePrixListDTO> articlePrixDTOListeBas, int idArticlePrixToDel) {
+	}
+	@Override
+	public void creeCommande(ArrayList<ArticlePrixListDTO> articlePrixDTOListeHaut) {
+		// TODO Auto-generated method stub
+
 	}
 }

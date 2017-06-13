@@ -25,7 +25,7 @@ public class ArticleList{
 	private final static Logger logger =
 			Logger.getLogger(ArticleList.class.getName());
 
-	private final String URL_NAME = "http://localhost:8080/LoginSpringMVC/articleList";
+	private final String URL_NAME = "http://localhost:8080/articleList";
 	private final String URL_NAME_BASIC = "articleList";
 
 	private int idArticlePrixToAdd;
@@ -105,6 +105,26 @@ public class ArticleList{
 			System.out.println("post idArticle � ajouter en haut par suppression :" + this.idArticlePrixToDel);
 		}
 
+		model.addAttribute(LISTE_ARTICLE_HAUT,this.articlePrixDTOListeHaut);
+		model.addAttribute(LISTE_ARTICLE_BAS,this.articlePrixDTOListeBas);
+
+		RedirectView redirectView = new RedirectView();
+		redirectView.setUrl(this.URL_NAME);
+		return redirectView;
+	}
+
+	@RequestMapping(value = "/articleList/addCommande", method = RequestMethod.GET)
+	public RedirectView  addCommande(Model model) {
+		/* Init du log */
+		logger.info("addCommande");
+		System.out.println("addCommande");
+
+		if (this.articlePrixDTOListeBas != null){
+			this.articlePrixListDTOService.creeCommande(this.articlePrixDTOListeBas);
+			System.out.println("appel - articlePrixListDTOService AddCommand");
+		}
+		this.articlePrixDTOListeBas = this.articlePrixListDTOService.initListeArticleBas();
+		this.articlePrixDTOListeHaut = this.articlePrixListDTOService.initListeArticleHaut();
 		model.addAttribute(LISTE_ARTICLE_HAUT,this.articlePrixDTOListeHaut);
 		model.addAttribute(LISTE_ARTICLE_BAS,this.articlePrixDTOListeBas);
 
