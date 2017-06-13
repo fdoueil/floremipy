@@ -16,7 +16,7 @@ public class UserServiceImpl implements UserServiceInterface {
 
 	
 	
-	public static UserServiceImpl getInstance() {
+	public  static UserServiceImpl getInstance() {
 		if (userManagerUnique == null) {
 			userManagerUnique = new UserServiceImpl();
 			preRemplir();
@@ -81,8 +81,6 @@ public class UserServiceImpl implements UserServiceInterface {
 		User user3 = new User(id, ident3, "magasinier@bl.com", "Mag#01",UserRole.MAGASINIER);
 		userManagerUnique.listeDesUsers.put(ident3,user3);
 		System.out.println("avant:" + userManagerUnique.listeDesUsers.size());
-
-
 	}
 
 
