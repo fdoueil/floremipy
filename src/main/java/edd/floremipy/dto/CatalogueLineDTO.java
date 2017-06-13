@@ -3,12 +3,27 @@ package edd.floremipy.dto;
 import java.io.Serializable;
 
 public class CatalogueLineDTO implements Serializable {
+	@Override
+	public String toString() {
+		return "CatalogueLineDTO [id=" + id + ", name=" + name + ", category=" + category + ", price=" + price
+				+ ", stock=" + stock + "]";
+	}
 	int id;
 	String name;
 	String category;
 	double price;
 	int stock;
 	
+	
+	public CatalogueLineDTO(int id, String name, String category, double price, int stock) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.category = category;
+		this.price = price;
+		this.stock = stock;
+	}
+
 	protected CatalogueLineDTO() {
 		super();
 	}
