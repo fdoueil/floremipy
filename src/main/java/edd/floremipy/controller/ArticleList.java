@@ -14,6 +14,7 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import edd.floremipy.dto.ArticlePrixListDTO;
 import edd.floremipy.service.ArticlePrixListDTOServiceImplementation;
+import edd.floremipy.service.CreerCommandeImplementation;
 
 
 
@@ -36,6 +37,7 @@ public class ArticleList{
 	ArrayList<ArticlePrixListDTO> articlePrixDTOListeHaut;
 	ArrayList<ArticlePrixListDTO> articlePrixDTOListeBas;
 	ArticlePrixListDTOServiceImplementation articlePrixListDTOService = new ArticlePrixListDTOServiceImplementation();
+	CreerCommandeImplementation creerCommandeImplementation = new CreerCommandeImplementation();
 
 	public static final String CHAMP_IDUSERCONNECTED = "idUserConnected";
 	public static final String LISTE_ARTICLE_HAUT = "articlePrixDTOListeHaut";
@@ -120,7 +122,7 @@ public class ArticleList{
 		System.out.println("addCommande");
 
 		if (this.articlePrixDTOListeBas != null){
-			this.articlePrixListDTOService.creeCommande(this.articlePrixDTOListeBas);
+			this.creerCommandeImplementation.creeCommande(this.articlePrixDTOListeBas);
 			System.out.println("appel - articlePrixListDTOService AddCommand");
 		}
 		this.articlePrixDTOListeBas = this.articlePrixListDTOService.initListeArticleBas();
