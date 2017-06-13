@@ -21,9 +21,11 @@
 		<ul class="nav nav-pills nav-stacked">
 			<li><a href=<c:url value="/"/>>Accueil</a></li>
             <li><a href=<c:url value="/login"/>>Connexion</a></li>
-            <li><a href=<c:url value="/"/>>Déconnexion</a></li>
+            <li><a href=<c:url value="/logout"/>>Déconnexion</a></li>
             <li><a href=<c:url value="/articleList"/>>Liste des articles</a></li>
-            <li><a href=<c:url value="/commandeList"/>>Liste des commandes</a></li>
+            <c:if test="${UserConnecte.getRole()=='JARDINIER'}">
+            	<li><a href=<c:url value="/commandeList"/>>Liste des commandes</a></li>
+            </c:if>
             <li><a href=<c:url value="choixModeLivraison"/>>Choix du mode de livraison</a></li>
 		</ul>
 	</div>	
