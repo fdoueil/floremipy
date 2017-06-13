@@ -27,26 +27,31 @@
 	</div>
 	<div class="row spacer">
 		<div class="col-md-12"></div>
-	</div>				
-	<table id="example" class="display" cellspacing="0" width="100%">
-        <thead>
-            <tr>
-                <th>Ref</th>
-                <th>Nom</th>
-                <th>Prix</th>
-                <th>Quantite</th>
-            </tr>
-        </thead>
-        <tfoot>
-            <tr>
-                <th>Ref</th>
-                <th>Nom</th>
-                <th>Prix</th>
-                <th>Quantite</th>
-            </tr>
-        </tfoot>
-    </table>
-
+	</div>
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
+			<table id="example" class="display" cellspacing="0" width="100%">
+		        <thead>
+		            <tr>
+		                <th>Ref</th>
+		                <th>Nom</th>
+		                <th>Prix</th>
+		                <th>Quantite</th>
+		            </tr>
+		        </thead>
+		        <tfoot>
+		            <tr>
+		                <th>Ref</th>
+		                <th>Nom</th>
+		                <th>Prix</th>
+		                <th>Quantite</th>
+		            </tr>
+		        </tfoot>
+		    </table>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
     <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
 
