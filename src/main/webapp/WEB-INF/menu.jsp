@@ -75,6 +75,7 @@ color:#5e91b2;
   					<li><a href=<c:url value="/"/>>Accueil</a></li>
   					<li><a href=<c:url value="/articleList"/>>Liste des articles</a></li>
   					<li><a href=<c:url value="choixModeLivraison"/>>Choix du mode de livraison</a></li>
+  					<li><a href=<c:url value="commandeList"/>>Voir les commandes à livrer</a></li>
 				</ul>
 			</div>	
 </body>
