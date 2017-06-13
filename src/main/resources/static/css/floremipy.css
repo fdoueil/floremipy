@@ -92,7 +92,7 @@ margin-left: -15px;
  font-size: 12px;
 }
 
-.nav , #menuAccueil, #menuLogin, #menuArticleList, #menuChoixModeLivraison, #menuCommandeList, #menuLogout{
+.nav , #menuAccueil, #menuLogin, #menuArticleList, #menuChoixModeLivraison, #menuCommandeList, #menuLogout, #menuChoixAdresseLivraison{
     color:#1f3d1a;	
 }
 
