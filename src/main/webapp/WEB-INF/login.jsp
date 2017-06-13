@@ -27,14 +27,14 @@
 							<label for="email">Login <span class="requis">*</span></label>
 							<input type="text" class="form-control" name="login" id="login"
 								value="${form.login}" size="20" maxlength="60" /> <span
-								class="erreur">${error['login']}</span> <br/>
+								class="erreur">${errorLogin}</span> <br/>
 						</div>
 		
 						<div class="form-group">
 							<label for="pwd">Mot de passe <span class="requis">*</span></label>
 							<input type="password" class="form-control" name="pwd"
 								id="pwd" value="" size="20" maxlength="20" /> <span
-								class="erreur">${error['motdepasse']}</span> <br/>
+								class="erreur">${errorMotDePasse}</span> <br/>
 						</div>
 		
 						<div class="form-group">
@@ -42,7 +42,6 @@
 								class="btn btn-primary btn-block">
 						</div>
 					</div>
-					<p> ${message}</p>
 				</fieldset>
 			</form>
 		</div>
