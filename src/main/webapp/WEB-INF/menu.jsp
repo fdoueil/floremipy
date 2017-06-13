@@ -18,7 +18,7 @@
 
 <body>
 	<div class="container-fluid bg-grey" id="menu">
-		<img src="/images/Logo.png">
+		<img src="/images/logo_floremipy.png">
 		<ul class="nav nav-pills nav-stacked">
 					<li><a href=<c:url value="/"/>>Accueil</a></li>
                   <li><a href=<c:url value="/login"/>>Connexion</a></li>
