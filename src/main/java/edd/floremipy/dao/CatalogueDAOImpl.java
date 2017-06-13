@@ -10,5 +10,12 @@ public class CatalogueDAOImpl implements CatalogueDAOInterface {
  * @see edd.floremipy.dao.CatalogueDAOInterface#findCatalogue()
  */
 @Override
-public List<CatalogueLineDTO> findCatalogue () {return Collections.emptyList();}
+public List<CatalogueLineDTO> findCatalogue () {
+	return Collections.emptyList();
+	}
+
+@Override
+public void setCatalogue(CatalogueLineDTO catalogueLineDTO) {
+	
+}
 }
