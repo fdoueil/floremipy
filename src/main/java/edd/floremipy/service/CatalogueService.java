@@ -7,7 +7,7 @@ import edd.floremipy.dto.CatalogueLineDTO;
 
 public interface CatalogueService {
 
-	String catalogLinesToJson(ArrayList<CatalogueLineDTO> myCatalog);
+	String catalogLinesToJson();
 
 	//sert à CatalogueServiceImpl pour
 	//retourner au format JSON 
