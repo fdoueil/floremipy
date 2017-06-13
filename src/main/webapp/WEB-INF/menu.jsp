@@ -73,6 +73,7 @@ color:#5e91b2;
 				
 				<ul class="nav nav-pills nav-stacked">
   					<li><a href=<c:url value="/"/>>Accueil</a></li>
+  					<li><a href=<c:url value="/login"/>>Connexion</a></li>
   					<li><a href=<c:url value="/articleList"/>>Liste des articles</a></li>
 				</ul>
 			</div>	
