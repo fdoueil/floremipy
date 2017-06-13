@@ -29,6 +29,7 @@
                  <c:if test="${UserConnecte.getRole()=='JARDINIER'}">
                  	<li><a id="menuCommandeList" href=<c:url value="commandeList"/>>Liste des livraisons du jour</a></li>
                  </c:if>
+                 <li><a id="menuLogout" href=<c:url value="/logout"/>>Déconnexion</a></li>
 		</ul>
 	</div>	
 </body>
