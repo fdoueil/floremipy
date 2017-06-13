@@ -39,9 +39,4 @@ public class ArticlePrixListDTOServiceImplementation implements ArticlePrixListD
 	public void deplaceDuBasVersLeHaut(ArrayList<ArticlePrixListDTO> articlePrixDTOListeHaut,
 			ArrayList<ArticlePrixListDTO> articlePrixDTOListeBas, int idArticlePrixToDel) {
 	}
-	@Override
-	public void creeCommande(ArrayList<ArticlePrixListDTO> articlePrixDTOListeHaut) {
-		// TODO Auto-generated method stub
-
-	}
 }
