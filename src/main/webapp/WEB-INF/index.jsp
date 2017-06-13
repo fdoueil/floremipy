@@ -22,87 +22,55 @@
 			<div>
     			<h3>Bienvenue dans FloreMiPy</h3> 
   			</div>
-  		</div>	
+  	</div>	
   		<div class="col-md-1"></div>
 	</div>
 	<div class="row spacer">
 		<div class="col-md-12"></div>
 	</div>
-	<div class="row">
-		<div class="col-md-1"></div>
-		<div class="col-md-10">
-			<table id="example" class="display" cellspacing="0" width="100%">
-		        <thead>
-		            <tr>
-		                <th>Ref</th>
-		                <th>Nom</th>
-		                <th>Prix</th>
-		                <th>Quantite</th>
-		            </tr>
-		        </thead>
-		        <tfoot>
-		            <tr>
-		                <th>Ref</th>
-		                <th>Nom</th>
-		                <th>Prix</th>
-		                <th>Quantite</th>
-		            </tr>
-		        </tfoot>
-		    </table>
-		</div>
-		<div class="col-md-1"></div>
-	</div>
-    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
-
-   	<script type="text/javascript">
-    	$(document).ready(function() {
-	    $("#example").dataTable({
-	    	data: [["RefAA1",
-	                "Palmier",
-	                "29",
-	                "100"
-	               ],
-	              
-	              [
-	                 "RefAA2",
-	                 "Rosiers",
-	                 "9",
-	                 "200"
-	              ],
-	              
-	              [
-	                  "RefAA3",
-	                  "Chrisanthème",
-	                  "19",
-	                  "50"
-	              ],
-	              
-	              [
-	                  "RefAA4",
-	                  "Bananier",
-	                  "9",
-	                  "10"
-	              ],
-	              
-	              [
-	                  "RefAA5",
-	                  "Olivier",
-	                  "599",
-	                  "100"
-	              ],
 	
-	              [
-	                  "RefAA6DeBase",
-	                  "Gazon",
-	                  "1",
-	                  "1000000"
-	              ]
-	          ]
-	    });         
-    });
+   	<div id="demo"></div>
+	<script type="text/javascript"
+		src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript"
+		src="http://cdn.datatables.net/1.10.6/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript">
+		var dataSet = [ [ 'RefAA1', 'Palmier', '59', '100' ],
+				[ 'RefAA2', 'Rosiers', '29', '200' ],
+				[ 'RefAA3', 'Chrisanthème', '19', '10' ],
+				[ 'RefAA4', 'Bananier', '9', '10' ],
+				[ 'RefAA5', 'Olivier', '509', '10' ],
+				[ 'RefAA6', 'Gazon', '0.1', '10000' ],
+				[ 'RefAA7', 'Herbe gratuite', '0', '100' ], ];
 
-    </script>
+		var ctr = 0;
+		$("#update").click(function() {
+			ctr++;
+			dataSet.push([ ctr, ctr, ctr, ctr ]);
+			console.log(JSON.stringify(dataSet));
+		});
+
+		$(document)
+				.ready(
+						function() {
+							$('#demo')
+									.html(
+											'<table cellpadding="0" cellspacing="0" border="0" class="display" id="example"></table>');
+							$('#example').dataTable({
+								"data" : dataSet,
+								"columns" : [ {
+									"title" : "Reference"
+								}, {
+									"title" : "Nom"
+								}, {
+									"title" : "Prix en Euros"
+								}, {
+									"title" : "Quantité en stock",
+								} ]
+							});
+						});
+	</script>
+	
 </body>
 </html>
 
