@@ -14,14 +14,19 @@
 <body>
 	<img src="/images/verdure_low_sized.jpg" width="100%" height="100%" style="position:absolute;">
 	<div class="row">
-		<div class="col-md-3">
+		<div class="col-md-2">
 			<c:import url="/WEB-INF/menu.jsp" />
 		</div>
-		<div class="col-md-9">	
+		<div class="col-md-1"></div>
+		<div class="col-md-8 text-center">	
 			<div>
     			<h3>Bienvenue dans FloreMiPy</h3> 
   			</div>
   		</div>	
+  		<div class="col-md-1"></div>
+	</div>
+	<div class="row spacer">
+		<div class="col-md-12"></div>
 	</div>				
 	<table id="example" class="display" cellspacing="0" width="100%">
         <thead>
