@@ -25,6 +25,7 @@
                  <li><a id="menuArticleList" href=<c:url value="/articleList"/>>Liste des articles</a></li>
                  <li><a id="menuChoixModeLivraison" href=<c:url value="/choixModeLivraison"/>>Choix du mode de livraison</a></li>
                  <li><a id="menuCommandeList" href=<c:url value="commandeList"/>>Liste des livraisons du jour</a></li>
+                 <li><a id="menuChoixAdresseLivraison" href=<c:url value="/choixAdresseLivraison"/>>Choix de l'adresse de livraison</a></li>
 		</ul>
 	</div>	
 </body>

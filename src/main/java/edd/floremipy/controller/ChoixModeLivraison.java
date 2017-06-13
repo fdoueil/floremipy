@@ -22,8 +22,8 @@ public class ChoixModeLivraison{
 	private final static Logger logger =
 			Logger.getLogger(ChoixModeLivraison.class.getName());
 
-	private final String URL_NAME = "http://localhost:8080/choixModeLivraison";
-	private final String URL_NAME_BASIC = "choixModeLivraison";
+	private final String URL_NAME = "http://localhost:8080/choixAdresseLivraison";
+	private final String URL_NAME_BASIC = "choixAdresseLivraison";
 
 	private int idTypeModeLivraison;
 	private int idCustomer;
