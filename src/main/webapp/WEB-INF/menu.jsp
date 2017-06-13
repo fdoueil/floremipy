@@ -15,61 +15,9 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 </head>
 
-<style>
-body {
-	background-color:#b3cadb;
-    font: 16px 'Ubuntu', sans-serif;
-	line-height:1.4;
-	padding: 10px;
-}
-
-.text-center {
-font-size:26px;
-color:#5e91b2;
-opacity:0.8;
-margin-bottom: 0px;
-}
-
-.nav-pills{
-margin-bottom: 15px;
-margin-left: 15px;
-padding-right: 30px;
-font-size:12px;
-color: #a5abaf;
-}
-
-.glyphicon-education {
-color:#5e91b2;
-}
-
-
-.nav-pills a:hover {
-    color: #a5abaf;
-    border-radius: 0px;
-}
-
-.nav-pills .active a:hover {
-    color: #a5abaf;
-}
-
-.nav>li>a:hover,
-.nav>li>a:focus {
-	color: #a5abaf;
-    background-color: #edf3f9;
-}
-
-</style>
-
-
 
 <body>
 				<div class="container-fluid bg-grey" id="menu">
-				<h2 class="text-center col-sm-12">
-					<div class="well">
-					<i class="glyphicon glyphicon-education"></i>
-					Flore Midi Pyrénées
-					</div>
-				</h2>
 				
 				<ul class="nav nav-pills nav-stacked">
   					<li><a href=<c:url value="/"/>>Accueil</a></li>

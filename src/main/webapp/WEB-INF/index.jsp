@@ -9,14 +9,19 @@
 
 <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
 
+<link type="text/css" rel="stylesheet" href="css/floremipy.css" />
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
  
-<link type="text/css" rel="stylesheet" href="css/main.css" />
+
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <title>FloreMipy</title>
 
 </head>
 <body>
+
+<img src="/images/verdure_low.jpg" width="100%" height="100%" style="position:absolute;">
+
 <div class="row">
 				<div class="col-md-3">
 					<c:import url="/WEB-INF/menu.jsp" />

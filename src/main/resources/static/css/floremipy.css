@@ -1,1 +1,43 @@
 @CHARSET "UTF-8";
+
+html body {
+    background-color:#b0e2a7;
+    font: 16px 'Ubuntu', sans-serif;
+    line-height:1.4;
+    padding: 10px;
+}
+
+.text-center {
+font-size:26px;
+color:#5e91b2;
+opacity:0.8;
+margin-bottom: 0px;
+}
+
+.nav-pills{
+margin-bottom: 15px;
+margin-left: 15px;
+padding-right: 30px;
+font-size:12px;
+color: #a5abaf;
+}
+
+.glyphicon-education {
+color:#5e91b2;
+}
+
+
+.nav-pills a:hover {
+    color: #a5abaf;
+    border-radius: 0px;
+}
+
+.nav-pills .active a:hover {
+    color: #a5abaf;
+}
+
+.nav>li>a:hover,
+.nav>li>a:focus {
+    color: #a5abaf;
+    background-color: #edf3f9;
+}
