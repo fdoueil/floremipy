@@ -13,12 +13,6 @@ public class CommandListDTO implements Serializable {
 
 	public CommandListDTO() {
 		super();
-		this.id = -9999;
-		this.clientName = "Mon cLient 1";
-		this.adress ="11 rue Berger Levrault - 31000 Toulouse";
-		this.commandReference = "9999 - 99 -9999";
-		this.totalCommand = 125.34d;
-		this.deliveryDate = new Date();
 	}
 
 	public int getId() {
