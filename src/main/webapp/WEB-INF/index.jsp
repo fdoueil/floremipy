@@ -21,9 +21,14 @@
 		<div class="col-md-8 text-center">	
 			<div>
     			<h3>Bienvenue dans FloreMiPy</h3> 
-  			</div>
-  	</div>	
-  		<div class="col-md-1"></div>
+      		</div>
+     	</div>	
+  			
+ 
+  			
+  		<div class="col-md-1">
+  		<h6><%= edd.floremipy.FloreMipyApplication.startDate.toString() %></h6> 
+  		</div>
 	</div>
 	<div class="row spacer">
 		<div class="col-md-12"></div>
