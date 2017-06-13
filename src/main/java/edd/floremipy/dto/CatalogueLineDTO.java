@@ -24,8 +24,7 @@ public class CatalogueLineDTO implements Serializable {
 		this.stock = stock;
 	}
 
-	protected CatalogueLineDTO() {
-
+	public CatalogueLineDTO() {
 		super();
 	}
 	
