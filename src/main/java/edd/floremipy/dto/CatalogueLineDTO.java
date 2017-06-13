@@ -9,7 +9,7 @@ public class CatalogueLineDTO implements Serializable {
 	double price;
 	int stock;
 	
-	protected CatalogueLineDTO() {
+	public CatalogueLineDTO() {
 		super();
 	}
 	
@@ -20,6 +20,14 @@ public class CatalogueLineDTO implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return (id + ","+ name + "," + category + "," + price + ","+ stock +";");
+	}
+
 	public String getName() {
 		return name;
 	}
