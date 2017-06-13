@@ -28,10 +28,10 @@
 			</div>
 			<div class="container" style="width: 400px;">
 				<div class="form-group">
-					<label for="email">Adresse email <span class="requis">*</span></label>
-					<input type="email" class="form-control" name="email" id="email"
-						value="${form.email}" size="20" maxlength="60" /> <span
-						class="erreur">${error['email']}</span> <br />
+					<label for="email">Login <span class="requis">*</span></label>
+					<input type="text" class="form-control" name="login" id="login"
+						value="${form.login}" size="20" maxlength="60" /> <span
+						class="erreur">${error['login']}</span> <br />
 				</div>
 
 				<div class="form-group">
@@ -46,7 +46,7 @@
 						class="btn btn-primary btn-block">
 				</div>
 			</div>
-			<p class="${statusOK ? 'succes' : 'erreur'}">${statusMessage}</p>
+			<p> ${message}</p>
 		</fieldset>
 	</form>
 
