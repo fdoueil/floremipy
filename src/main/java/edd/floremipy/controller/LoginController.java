@@ -31,16 +31,17 @@ public class LoginController {
 
 		System.out.println("login = " + login);
 		System.out.println("pwd = " + pwd);
-		String message = null;
+		String messageLogin = null;
+		String messagePwd = null;
 
 		// on teste le login et pwd saisis
 		String retour = UserServiceImpl.getInstance().authenticate(login, pwd);
 		System.out.println("retour = " + retour);
 
 		if (retour == "PB:LoginController:Erreur 001:Utilisateur inconnu") {
-			message = "login utilisateur inconnu";
+			messageLogin = "login utilisateur inconnu";
 		} else if (retour == "PB:Pwd:Erreur 001:Mot de passe incorrect pour cet utilisateur") {
-			message = "Mot de passe incorrect pour cet utilisateur";
+			messagePwd = "Mot de passe incorrect pour cet utilisateur";
 		}
 
 		// user trouvé
@@ -50,7 +51,9 @@ public class LoginController {
 			return "index";
 		} else // user non trouvé
 		{
-			model.addAttribute("message", message);
+			model.addAttribute("errorLogin", messageLogin);
+			model.addAttribute("errorMotDePasse", messagePwd);
+
 			return "login";
 		}
 	}
