@@ -8,15 +8,17 @@ public class UserDTO implements Serializable {
 	String identifiant;
 	String email;
 	UserRole role;
+	Long idCustomer;
 	public UserDTO() {
 		super();
 	}
 	
-	public UserDTO(String identifiant, String email, UserRole role) {
+	public UserDTO(String identifiant, String email, UserRole role, Long idCustomer ) {
 		super();
 		this.identifiant = identifiant;
 		this.email = email;
 		this.role = role;
+		this.idCustomer = idCustomer;
 	}
 
 	public String getIdentifiant() {
@@ -36,6 +38,14 @@ public class UserDTO implements Serializable {
 	}
 	public void setRole(UserRole role) {
 		this.role = role;
+	}
+
+	public Long getIdCustomer() {
+		return idCustomer;
+	}
+
+	public void setIdCustomer(Long idCustomer) {
+		this.idCustomer = idCustomer;
 	}
 	
 
