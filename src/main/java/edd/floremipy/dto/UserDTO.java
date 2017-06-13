@@ -11,6 +11,7 @@ public class UserDTO implements Serializable {
 	Long idCustomer;
 	public UserDTO() {
 		super();
+		idCustomer=0L;
 	}
 	
 	public UserDTO(String identifiant, String email, UserRole role, Long idCustomer ) {
