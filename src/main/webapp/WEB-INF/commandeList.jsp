@@ -10,88 +10,26 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link href="https://fonts.googleapis.com/css?family=Playball" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="css/floremipy.css" />
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix = "fmt" %>
 </head>
-
-<style>
-body {
-	background-color:#b3cadb;
-    font: 16px 'Ubuntu', sans-serif;
-	line-height:1.4;
-	padding: 10px;
-	color:#5e91b2;
-}
-
-
-
-.input-group {
-      border-radius: 0;
-      margin-left: 15px;
-      text-transform: uppercase;
-      padding-left: 5px;
-  }
-  
-  .btn-default {
-      border-radius: 0;
-      margin-left: 0px;
-  }
-
-.glyphicon{
-color:#5e91b2;
-}
-
-td{
-margin-left: 30px;
-color:#5e91b2;
-font-size: 10px;
-background-color:#f4f5f7;
-}
-
-glyphicon glyphicon-plus{
-cursor:pointer;
-}
-
-table{
-margin-left: -15px;
-}
- thead{
- border-radius: 5px;
- background-color:#dce2f2;
- color:#5e91b2;
- font-size: 12px;
- }
- 
-#TitreHaut, #TitreBas{
-	color:#5e91b2;
-}
-
-#idQteCommandee{
- background-color:#dce2f2;
- color:#ba3e30;
- font-size: 12px;
-}
-
-</style>
-
-
 <body>
+<img src="/images/verdure_low_sized.jpg" width="100%" height="100%" style="position:absolute;">
 	<div class="container">
 		<form id="form" >
 		<input id="idArticlePrixToAdd" name="idArticlePrixToAdd" type="hidden"></input>	
 		<input id="idArticlePrixToDel" name="idArticlePrixToDel" type="hidden"></input>		
 				<div class="row">
 				   
-					<div class="col-md-3">
+					<div class="col-md-12">
 							<%--  <c:set var = "errorConnected" scope = "session" value = "${false}"/>--%>
 							<c:import url="/WEB-INF/menu.jsp" />
 					</div>
 					<br>
 					
-					<div class="col-md-9">
+					<div class="col-md-12">
 					<h3 id = "TitreHaut">Liste des commandes à livrer</h3>
 						<table class="table table-hover">
 						    <thead>
