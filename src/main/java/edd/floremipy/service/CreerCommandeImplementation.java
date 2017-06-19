@@ -10,6 +10,8 @@ import edd.floremipy.dao.CustomerOrderDAOInterface;
 import edd.floremipy.dao.CustomerOrderLineDAOInterface;
 import edd.floremipy.dto.ArticlePrixListDTO;
 import edd.floremipy.dto.CommandListDTO;
+import edd.floremipy.dto.CustomerOrderDTO;
+import edd.floremipy.dto.CustomerOrderLineDTO;
 import edd.floremipy.model.TypeModeLivraison;
 
 @Service("commandeService")
@@ -26,23 +28,38 @@ public class CreerCommandeImplementation implements CreerCommandeInterface {
 	}
 
 	@Override
-	public CommandListDTO creeCommande(ArrayList<ArticlePrixListDTO> articlePrixDTOListeHaut) {
+	public CustomerOrderDTO creeCommande(long idCustomerLogge, ArrayList<ArticlePrixListDTO> articlePrixDTOListeHaut) {
 		Date uneDate = null;
-		CommandListDTO retour=new CommandListDTO();
-//		long idCustomer=10; // A recevoir en paramétre, lié au idCustomer du User connecté
-//		long idAdress=0;  // A 0 , quand on livre a l'adresse du client
-		long idCustomer=155;
+		CustomerOrderDTO retour=new CustomerOrderDTO();
+		
+		// Pour la creation de commande , l'adresse n'est pas connue,pas plus que la date
+		// par contre on doit gérer l'id du customer (passé par l'appelant et correspond a l'user loggé)
+		
+
+		
 		long idAdress=0;
-		long idCommande = unCustomerOrderDAO.ajouteCommande(uneDate, idCustomer, idAdress);
-		System.out.println("idcommande retourné:" + idCommande);
+		ArrayList<CustomerOrderLineDTO> lignesCommande= new ArrayList<CustomerOrderLineDTO>();
+
+		retour.setIdAdress(idAdress);
+		retour.setIdCustomer(idCustomerLogge);
+		
+		retour.setId(unCustomerOrderDAO.ajouteCommande(uneDate, idCustomerLogge, idAdress));
+		
+		System.out.println("idcommande retourné:" + retour.getId());
 		for (int iArticle=0; iArticle < articlePrixDTOListeHaut.size(); iArticle++)  {
 			ArticlePrixListDTO unArticle = articlePrixDTOListeHaut.get(iArticle);
 			int qteCommandee = unArticle.getQuantityOrder();
+			
 			int qteLivree = qteCommandee; // pour l'instant pas de livraison partielle TODO
-			long idLine = unCustomerOrderLineDAO.ajouteLigneCommande(idCommande,unArticle.getId(), qteCommandee,qteLivree);
+			System.out.println("Parametres:" + retour.getId() + "/" + unArticle.getId()+"/" + qteCommandee + "/" + qteLivree);
+			long idLine = unCustomerOrderLineDAO.ajouteLigneCommande(retour.getId(),unArticle.getId(), qteCommandee,qteLivree);
 			System.out.println("Ligne commande ajoutée:" + idLine);
+			lignesCommande.add( new CustomerOrderLineDTO(unArticle.getId(), qteCommandee, qteLivree));
 		}
-		retour.setId(idCommande);
+		retour.setLignesCommande(lignesCommande);
+		
+		
+		// Fabriquer en parallele le DTO de retour (id_client, et liste de customerOrderLineDTO)
 		return retour;
 
 	}
