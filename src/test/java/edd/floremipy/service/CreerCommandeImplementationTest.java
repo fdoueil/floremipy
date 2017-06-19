@@ -19,6 +19,8 @@ import edd.floremipy.dao.CustomerOrderDAOInterface;
 import edd.floremipy.dao.CustomerOrderLineDAOInterface;
 import edd.floremipy.dto.ArticlePrixListDTO;
 import edd.floremipy.dto.CommandListDTO;
+import edd.floremipy.dto.CustomerOrderDTO;
+import edd.floremipy.dto.CustomerOrderLineDTO;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CreerCommandeImplementationTest {
@@ -62,11 +64,26 @@ public class CreerCommandeImplementationTest {
 		long idLineCommande = 12001;
 		
 		Mockito.when(myCustomerOrderDAOMock.ajouteCommande(uneDate, idCustomer, idAdress)).thenReturn(idCommande);	
-		Mockito.when(myCustomerOrderLineDAOMock.ajouteLigneCommande(idCommande, 123, 10, 2)).thenReturn(idLineCommande);	
-		Mockito.when(myCustomerOrderLineDAOMock.ajouteLigneCommande(idCommande, 456, 50, 3)).thenReturn(idLineCommande+1);	
+		Mockito.when(myCustomerOrderLineDAOMock.ajouteLigneCommande(idCommande, 123, 2, 2)).thenReturn(idLineCommande);	
+		Mockito.when(myCustomerOrderLineDAOMock.ajouteLigneCommande(idCommande, 456, 3, 3)).thenReturn(idLineCommande+1);	
 		
 		
-		CommandListDTO laCommande = myCreerCommandeService.creeCommande(uneListe);
+		CustomerOrderDTO laCommande = myCreerCommandeService.creeCommande(idCustomer, uneListe);
+//		long expected = 2001;
+//		long actual = laCommande.getId();
+//		assertEquals( expected , actual);
+		
+		assertEquals(laCommande.getIdCustomer(), idCustomer);
+		ArrayList<CustomerOrderLineDTO> lignesCommande = laCommande.getLignesCommande();
+		assertEquals(2, lignesCommande.size());
+		assertEquals(123, lignesCommande.get(0).getIdArticle());
+		assertEquals(2, lignesCommande.get(0).getQuantity());
+//		// Qte délivrée n'est pas testée ici, car elle n'est pas géré a la création de commande
+		
+		assertEquals(456, lignesCommande.get(1).getIdArticle());
+		assertEquals(3, lignesCommande.get(1).getQuantity());
+		
+		
 		
 		System.out.println(laCommande.getId());
 		

@@ -122,7 +122,8 @@ public class ArticleList{
 		System.out.println("addCommande");
 
 		if (this.articlePrixDTOListeBas != null){
-			this.creerCommandeImplementation.creeCommande(this.articlePrixDTOListeBas);
+			long idCustomerLogge=0;  // A recuperer dans UserDTO chargé au login
+			this.creerCommandeImplementation.creeCommande(idCustomerLogge , this.articlePrixDTOListeBas);
 			System.out.println("appel - articlePrixListDTOService AddCommand");
 		}
 		this.articlePrixDTOListeBas = this.articlePrixListDTOService.initListeArticleBas();
