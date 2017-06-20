@@ -33,7 +33,7 @@ public class CatalogueDAOImpl extends AbstractDAO implements CatalogueDAOInterfa
 
 		em = getEntityManager();
 
-		String sqlPur = "SELECT p.IdArticle,a.name,a.category,a.quantityInStock,p.value FROM Article a, Price p"
+		String sqlPur = "SELECT p.IdArticle,a.name,a.category,a.quantityInStock,p.value, a.description, a.imgsrc FROM Article a, Price p"
 				+ " WHERE a.id = p.IdArticle and p.date = "
 				+ "(SELECT MAX(date) from Price pr WHERE pr.IdArticle = p.IdArticle)";
 
@@ -51,7 +51,10 @@ public class CatalogueDAOImpl extends AbstractDAO implements CatalogueDAOInterfa
 			String category= (String)current[2];
 			double price= ((BigDecimal)current[4]).doubleValue();
 			int stock = ((Integer)current[3]).intValue();
-			CatalogueLineDTO cl=new CatalogueLineDTO(id , name, category, price, stock);
+			String description =(String)current[5];
+			String imgsrc =(String)current[6];
+			
+			CatalogueLineDTO cl=new CatalogueLineDTO(id , name, category, price, stock, description, imgsrc );
 			log.info(""+cl);
 			res.add(cl);
 		}
