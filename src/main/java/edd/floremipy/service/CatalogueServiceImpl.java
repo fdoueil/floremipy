@@ -11,15 +11,15 @@ import com.google.gson.GsonBuilder;
 
 import edd.floremipy.dao.CatalogueDAOInterface;
 import edd.floremipy.dto.CatalogueLineDTO;
+import edd.floremipy.service.CatalogueServiceInterface;
 
 @Service("catalogueService")
-public class CatalogueServiceImpl implements CatalogueService {
+public class CatalogueServiceImpl implements CatalogueServiceInterface {
 	
 	@Autowired
 	CatalogueDAOInterface dao;
 	
 	
-	@Override
 	public String catalogLinesToJson() {
 		
 		List<CatalogueLineDTO> myCatalogLines = dao.findCatalogue();
@@ -31,10 +31,11 @@ public class CatalogueServiceImpl implements CatalogueService {
 			for (CatalogueLineDTO catalogueLineDTO : myCatalogLines) {
 				//convertir au format String JSON(P) chaque ligne du catalogue reçu
 				//( "id/ref - ArticleName - Category - Price - QtyStock")
-				sbLignesCatalogue.append(catalogueLineDTO.toString());
-				System.out.println("Ligne de catalogue : " + catalogueLineDTO.toString());
+				sbLignesCatalogue.append(catalogueLineDTO.lineToJson());
+				System.out.println("Ligne de catalogue : " + catalogueLineDTO.lineToJson());
 			}			
 		}
-		return gson.toJson(sbLignesCatalogue);
+		System.out.println(sbLignesCatalogue.toString());
+		return sbLignesCatalogue.toString();
 	}
 }
