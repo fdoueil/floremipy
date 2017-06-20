@@ -5,7 +5,7 @@ import java.util.List;
 
 import edd.floremipy.dto.CatalogueLineDTO;
 
-public interface CatalogueService {
+public interface CatalogueServiceInterface {
 
 	String catalogLinesToJson();
 
