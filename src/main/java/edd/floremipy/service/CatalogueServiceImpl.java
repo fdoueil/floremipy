@@ -11,6 +11,7 @@ import com.google.gson.GsonBuilder;
 
 import edd.floremipy.dao.CatalogueDAOInterface;
 import edd.floremipy.dto.CatalogueLineDTO;
+import edd.floremipy.service.CatalogueServiceInterface;
 
 @Service("catalogueService")
 public class CatalogueServiceImpl implements CatalogueServiceInterface {
@@ -19,7 +20,6 @@ public class CatalogueServiceImpl implements CatalogueServiceInterface {
 	CatalogueDAOInterface dao;
 	
 	
-	@Override
 	public String catalogLinesToJson() {
 		
 		List<CatalogueLineDTO> myCatalogLines = dao.findCatalogue();
