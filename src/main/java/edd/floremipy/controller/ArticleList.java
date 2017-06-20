@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,7 +37,9 @@ public class ArticleList{
 	Map<String, String> errors = new HashMap<String, String>();
 	ArrayList<ArticlePrixListDTO> articlePrixDTOListeHaut;
 	ArrayList<ArticlePrixListDTO> articlePrixDTOListeBas;
-	ArticlePrixListDTOServiceImplementation articlePrixListDTOService = new ArticlePrixListDTOServiceImplementation();
+	
+	@Autowired
+	ArticlePrixListDTOServiceImplementation articlePrixListDTOService;
 	CreerCommandeImplementation creerCommandeImplementation = new CreerCommandeImplementation();
 
 	public static final String CHAMP_IDUSERCONNECTED = "idUserConnected";
