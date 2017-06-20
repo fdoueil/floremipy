@@ -20,10 +20,13 @@ JUnit Tests avec Mokito
 
 -->cf. CatalogueServiceImplTest.java
 
-1- Dans la classe Service, l'annotation @Service permet de déclarer le nom service :
+1/Dans la classe Service, l'annotation @Service permet de déclarer le nom service,
+et @Autowired sur la DAO permet d'autoriser le mock de la DAO nécessaire aux tests  :
 
 		@Service("catalogueService")
 		public class CatalogueServiceImpl implements CatalogueService {
+		@Autowired
+		CatalogueDAOInterface dao;
 
 2- Pour utiliser Mockito, ajouter l'annotation sur la classe de test :
 
