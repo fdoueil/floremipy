@@ -30,7 +30,11 @@ public class CreerCommandeImplementation implements CreerCommandeInterface {
 	@Override
 	public CustomerOrderDTO creeCommande(long idCustomerLogge, ArrayList<ArticlePrixListDTO> articlePrixDTOListeHaut) {
 		Date uneDate = null;
+		
 		CustomerOrderDTO retour=new CustomerOrderDTO();
+
+		if (unCustomerOrderDAO==null) return retour;
+		if (unCustomerOrderLineDAO==null) return retour;
 		
 		// Pour la creation de commande , l'adresse n'est pas connue,pas plus que la date
 		// par contre on doit gérer l'id du customer (passé par l'appelant et correspond a l'user loggé)
