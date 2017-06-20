@@ -13,6 +13,17 @@ Puis lancer le script floremipy_tu.sql (src/main/sql/)
 
 Le fichier application.properties dans src/main/resources permet de configurer l'accès bdd
 Il est ignoré par Git et donc est personnalisable pour chaque Dev :)
+Le contenu est :
+
+jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost/floremipy_tu
+jdbc.username=root
+jdbc.password=root
+spring.datasource.useSSL=false
+hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
+hibernate.hbm2ddl.auto=create-drop
+hibernate.show_sql = true
+hibernate.format_sql = true
 
 ### Mockito
 
