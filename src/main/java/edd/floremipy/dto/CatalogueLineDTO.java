@@ -2,6 +2,9 @@ package edd.floremipy.dto;
 
 import java.io.Serializable;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 public class CatalogueLineDTO implements Serializable {
 	@Override
 	public String toString() {
@@ -95,5 +98,12 @@ public class CatalogueLineDTO implements Serializable {
 	public void setImgsrc(String imgsrc) {
 		this.imgsrc = imgsrc;
 	}
+	
+	//convertir au format String JSON(P) chaque ligne du catalogue reçu
+    //( "id/ref - ArticleName - Category - Price - QtyStock")
+    public String lineToJson() {
+        Gson gson = new GsonBuilder().create();
+        return gson.toJson(this);    
+    }
 
 }
