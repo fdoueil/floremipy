@@ -34,19 +34,19 @@ public class CatalogueServiceImplTest {
 	 @Before
 	 public void init() throws Throwable {
 		 //creation d'un article ref "123"
-		 catalogueLineDTO1 = new CatalogueLineDTO(123, "olivier", "arbre", 100, 10);
+		 catalogueLineDTO1 = new CatalogueLineDTO(123, "olivier", "arbre", 100, 10, "ceci est un olivier","olivier.jpg");
 		 
 		 //creation d'un 2nd article ref "234"
-		 catalogueLineDTO2 = new CatalogueLineDTO(234, "rosier", "arbuste", 15, 30);
+		 catalogueLineDTO2 = new CatalogueLineDTO(234, "rosier", "arbuste", 15, 30, "ceci est un rosier","rosier.jpg");
 		 
 		 //alimentation myListCatalogueLinesDTO
 		 myListCatalogueLinesDTO.add(catalogueLineDTO1);
-		 myListCatalogueLinesDTO.add(catalogueLineDTO2);				 
+ 		 myListCatalogueLinesDTO.add(catalogueLineDTO2);				 
 	 }
 	
 	 @Test
 	 public void testCatalogue_linesToJson() {
-		 String expected = "{\"id\":123,\"name\":\"olivier\",\"category\":\"arbre\",\"price\":100.0,\"stock\":10}{\"id\":234,\"name\":\"rosier\",\"category\":\"arbuste\",\"price\":15.0,\"stock\":30}";
+		 String expected = "{\"id\":123,\"name\":\"olivier\",\"category\":\"arbre\",\"price\":100.0,\"stock\":10,\"description\":\"ceci est un olivier\",\"imgsrc\":\"olivier.jpg\"}{\"id\":234,\"name\":\"rosier\",\"category\":\"arbuste\",\"price\":15.0,\"stock\":30,\"description\":\"ceci est un rosier\",\"imgsrc\":\"rosier.jpg\"}";
 		 
 		 Mockito.when(myCatalogMock.findCatalogue()).thenReturn(myListCatalogueLinesDTO);	 
 		 String result = myCatalogService.catalogLinesToJson();
