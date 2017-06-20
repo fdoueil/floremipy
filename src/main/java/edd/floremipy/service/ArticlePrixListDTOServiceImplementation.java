@@ -42,6 +42,8 @@ public class ArticlePrixListDTOServiceImplementation implements ArticlePrixListD
 		articlePrixListDTO.setName(catalogueLineDTO.getName());
 		articlePrixListDTO.setPriceValue((float)catalogueLineDTO.getPrice());
 		articlePrixListDTO.setQuantityInStock(catalogueLineDTO.getStock());		
+		articlePrixListDTO.setImg(catalogueLineDTO.getImgsrc());
+		articlePrixListDTO.setDescription(catalogueLineDTO.getDescription());
 	}
 	
 	@Override

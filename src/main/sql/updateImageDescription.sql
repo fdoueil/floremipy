@@ -1,0 +1,11 @@
+UPDATE `floremipy_tu`.`article` SET `Description`='descrip 1', `Imgsrc`='Olivier.jpg' WHERE `Id`='1';
+UPDATE `floremipy_tu`.`article` SET `Description`='descrip 2', `Imgsrc`='Olivier.jpg' WHERE `Id`='2';
+UPDATE `floremipy_tu`.`article` SET `Description`='descrip 13', `Imgsrc`='Olivier.jpg' WHERE `Id`='3';
+UPDATE `floremipy_tu`.`article` SET `Description`='descrip 11', `Imgsrc`='Olivier.jpg' WHERE `Id`='4';
+UPDATE `floremipy_tu`.`article` SET `Description`='descrip 1', `Imgsrc`='Olivier.jpg' WHERE `Id`='5';
+UPDATE `floremipy_tu`.`article` SET `Description`='descrip 1', `Imgsrc`='Olivier.jpg' WHERE `Id`='6';
+UPDATE `floremipy_tu`.`article` SET `Description`='descrip 1', `Imgsrc`='Olivier.jpg' WHERE `Id`='7';
+UPDATE `floremipy_tu`.`article` SET `Description`='descrip 1', `Imgsrc`='Olivier.jpg' WHERE `Id`='8';
+UPDATE `floremipy_tu`.`article` SET `Description`='descrip 1', `Imgsrc`='Olivier.jpg' WHERE `Id`='9';
+UPDATE `floremipy_tu`.`article` SET `Description`='descrip 1', `Imgsrc`='Olivier.jpg' WHERE `Id`='10';
+UPDATE `floremipy_tu`.`article` SET `Description`='descrip 1', `Imgsrc`='Olivier.jpg' WHERE `Id`='11';
