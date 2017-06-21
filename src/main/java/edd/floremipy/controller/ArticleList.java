@@ -24,7 +24,7 @@ import edd.floremipy.service.CreerCommandeImplementation;
 
 
 @Controller
-@SessionAttributes( value="UserConnecte", types={UserDTO.class} )
+@SessionAttributes( value="userConnecte", types={UserDTO.class} )
 
 public class ArticleList{
 	private static final long serialVersionUID = 1L;
@@ -124,7 +124,7 @@ public class ArticleList{
 	}
 
 	@RequestMapping(value = "/articleList/addCommande", method = RequestMethod.GET)
-	public RedirectView  addCommande(@ModelAttribute("UserConnecte") UserDTO userLogge, Model model) {
+	public RedirectView  addCommande(@ModelAttribute("userConnecte") UserDTO userLogge, Model model) {
 
 	
 		/* Init du log */

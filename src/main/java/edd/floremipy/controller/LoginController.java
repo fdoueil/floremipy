@@ -13,7 +13,7 @@ import edd.floremipy.dto.UserDTO;
 import edd.floremipy.service.UserServiceImpl;
 
 @Controller
-@SessionAttributes( value="UserConnecte", types={UserDTO.class} )
+@SessionAttributes( value="userConnecte", types={UserDTO.class} )
 public class LoginController {
 	private final static Logger logger = Logger.getLogger(LoginController.class.getName());
 
@@ -46,8 +46,8 @@ public class LoginController {
 
 		// user trouvé
 		if (retour == login) {
-			UserDTO UserConnecte = UserServiceImpl.getInstance().getUser(login);
-			model.addAttribute("UserConnecte", UserConnecte);
+			UserDTO userConnecte = UserServiceImpl.getInstance().getUser(login);
+			model.addAttribute("userConnecte", userConnecte);
 			return "index";
 		} else // user non trouvé
 		{
