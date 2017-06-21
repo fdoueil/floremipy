@@ -45,11 +45,10 @@
 
 	<div id="demo"></div>
 	<script type="text/javascript"
-		src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		src="js/jquery-1.12.4.js"></script>
 	<script type="text/javascript"
-		src="http://cdn.datatables.net/1.10.6/js/jquery.dataTables.min.js"></script>
+		src="js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript">
-		var dataSet = [];
 		/*    {"id":123,"name":"olivier","category":"arbre","price":100.0,"stock":10,"description":"ceci est un olivier","imgsrc":"olivier.jpg"} */
 
 		$(document).ready(function() {
@@ -71,23 +70,31 @@
 					.html(
 							'<table cellpadding="0" cellspacing="0" border="0" class="display" id="example"></table>');
 			
-			$('#example').dataTable({
-				"data" : dataSet,
-				"sAjaxSource": "api/products",
-				"columns" : [ {
-					"title" : "id"
+			$('#example').DataTable({
+				ajax: 'api/products',
+				dataType : 'json',
+				"bProcessing": true,
+				columns: [ {
+					title: "id",
+					data: "id"
 				}, {
-					"title" : "name"
+					title: "name",
+					data: "name"
 				}, {
-					"title" : "category"
+					title: "category",
+					data: "category"
 				}, {
-					"title" : "price",
+					title: "price",
+					data: "price"
 				}, {
-					"title" : "stock"
+					title: "stock",
+					data: "stock"
 				}, {
-					"title" : "description"
+					title: "description",
+					data: "description"
 				}, {
-					"title" : "imgsrc"
+					title: "imgsrc",
+					data: "imgsrc"
 				} ]
 			});
 		});
