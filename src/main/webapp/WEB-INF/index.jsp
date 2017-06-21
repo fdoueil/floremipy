@@ -70,10 +70,12 @@
 					.html(
 							'<table cellpadding="0" cellspacing="0" border="0" class="display" id="example"></table>');
 			
-			$('#example').DataTable({
-				ajax: 'api/products',
-				dataType : 'json',
-				"bProcessing": true,
+			var table = $('#example').dataTable({
+				ajax: {
+					url:'../api/products',
+					type: 'GET',
+					dataSrc:''
+					},
 				columns: [ {
 					title: "id",
 					data: "id"
