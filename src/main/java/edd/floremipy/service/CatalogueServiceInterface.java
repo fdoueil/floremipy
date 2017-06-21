@@ -9,6 +9,8 @@ public interface CatalogueServiceInterface {
 
 	String catalogLinesToJson();
 
+	List<CatalogueLineDTO> listCatalogueLinesJson();
+
 	//sert à CatalogueServiceImpl pour
 	//retourner au format JSON 
 	//la liste de LigneDeCatalogue (id/ref - ArticleName - Category - Price - QtyStock)

@@ -23,7 +23,7 @@ public class CatalogueServiceImplTest {
 	CatalogueDAOInterface myCatalogMock = Mockito.mock(CatalogueDAOInterface.class);
 	
 	@InjectMocks
-	CatalogueServiceImpl myCatalogService = new CatalogueServiceImpl();
+	CatalogueServiceInterface myCatalogService = new CatalogueServiceImpl();
 
 	CatalogueLineDTO catalogueLineDTO1; 
 	CatalogueLineDTO catalogueLineDTO2;
