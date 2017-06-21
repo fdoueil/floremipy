@@ -100,9 +100,9 @@ public class CatalogueLineDTO implements Serializable {
 	}
 	
 	//convertir au format String JSON(P) chaque ligne du catalogue reçu
-    //( "id/ref - ArticleName - Category - Price - QtyStock")
     public String lineToJson() {
         Gson gson = new GsonBuilder().create();
+        System.out.println(gson.toJson(this));
         return gson.toJson(this);    
     }
 
