@@ -40,4 +40,14 @@ public class CatalogueServiceImpl implements CatalogueServiceInterface {
 		System.out.println(sbLignesCatalogue.toString());
 		return sbLignesCatalogue.toString();
 	}
+	
+	@Override
+	public List<CatalogueLineDTO> listCatalogueLinesJson(){
+		
+		List<CatalogueLineDTO> catalogueJsonLines = dao.findCatalogue();
+
+
+		return catalogueJsonLines;
+		
+	}
 }
