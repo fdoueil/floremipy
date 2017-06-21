@@ -54,7 +54,8 @@
 
 		$(document).ready(function() {
 			
-			$.ajax({
+			// ancien appel ajax
+			/*$.ajax({
 				type: "GET",
 				url : "api/products",
 				dataType : 'json',
@@ -64,7 +65,7 @@
 					//dataSet = $.parseJSON(data);
 					dataSet = data;
 				}
-			});
+			});*/
 			
 			$('#demo')
 					.html(
@@ -74,19 +75,19 @@
 				"data" : dataSet,
 				"sAjaxSource": "api/products",
 				"columns" : [ {
-					"title" : "category"
-				}, {
-					"title" : "description"
-				}, {
 					"title" : "id"
-				}, {
-					"title" : "imgsrc",
 				}, {
 					"title" : "name"
 				}, {
-					"title" : "price"
+					"title" : "category"
+				}, {
+					"title" : "price",
 				}, {
 					"title" : "stock"
+				}, {
+					"title" : "description"
+				}, {
+					"title" : "imgsrc"
 				} ]
 			});
 		});
