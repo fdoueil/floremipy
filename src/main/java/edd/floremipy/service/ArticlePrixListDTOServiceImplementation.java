@@ -24,8 +24,6 @@ public class ArticlePrixListDTOServiceImplementation implements ArticlePrixListD
 	}
 	@Override
 	public ArrayList<ArticlePrixListDTO> initListeArticleHaut(){		
-		//this.fillWithMockedValue(articlePrixListDTO);
-		//articlePrixListDTO.setName(articlePrixListDTO.getName() + " - Haut");
 		List<CatalogueLineDTO> maListe = catalogueDAO.findCatalogue();
 		for (CatalogueLineDTO catalogueLineDTO : maListe) {
 			ArticlePrixListDTO articlePrixListDTO = new ArticlePrixListDTO();
@@ -48,11 +46,6 @@ public class ArticlePrixListDTOServiceImplementation implements ArticlePrixListD
 	
 	@Override
 	public ArrayList<ArticlePrixListDTO> initListeArticleBas(){
-		//ArticlePrixListDTO articlePrixListDTO = new ArticlePrixListDTO();
-		//this.fillWithMockedValue(articlePrixListDTO);
-		//articlePrixListDTO.setName(articlePrixListDTO.getName() + " - Bas");
-		//articlePrixListDTO.setId(articlePrixListDTO.getId() + 10);
-		//this.listeInitBas.add(articlePrixListDTO);
 		return this.listeInitBas;
 	}
 
@@ -87,15 +80,5 @@ public class ArticlePrixListDTOServiceImplementation implements ArticlePrixListD
 			articlePrixDTOListeHaut.add(articlePrixListDTO);
 			articlePrixDTOListeBas.remove(articlePrixListDTO);
 		}
-	}
-
-	protected void fillWithMockedValue(ArticlePrixListDTO item){
-		item.setName("Article Test");
-		item.setDescription("Article cr�� automatiquement");
-		item.setPriceValue(10.26F);
-		item.setQuantityInStock(12);
-		item.setQuantityOrder(0);
-		item.setId(-9999);
-		item.setImg("Olivier.jpg");
 	}
 }
