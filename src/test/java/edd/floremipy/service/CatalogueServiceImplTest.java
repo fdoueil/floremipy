@@ -46,7 +46,7 @@ public class CatalogueServiceImplTest {
 	
 	 @Test
 	 public void testCatalogue_linesToJson() {
-		 String expected = "{\"id\":123,\"name\":\"olivier\",\"category\":\"arbre\",\"price\":100.0,\"stock\":10,\"description\":\"ceci est un olivier\",\"imgsrc\":\"olivier.jpg\"}{\"id\":234,\"name\":\"rosier\",\"category\":\"arbuste\",\"price\":15.0,\"stock\":30,\"description\":\"ceci est un rosier\",\"imgsrc\":\"rosier.jpg\"}";
+		 String expected = "[{\"id\":123,\"name\":\"olivier\",\"category\":\"arbre\",\"price\":100.0,\"stock\":10,\"description\":\"ceci est un olivier\",\"imgsrc\":\"olivier.jpg\"},{\"id\":234,\"name\":\"rosier\",\"category\":\"arbuste\",\"price\":15.0,\"stock\":30,\"description\":\"ceci est un rosier\",\"imgsrc\":\"rosier.jpg\"}]";
 		 
 		 Mockito.when(myCatalogMock.findCatalogue()).thenReturn(myListCatalogueLinesDTO);	 
 		 String result = myCatalogService.catalogLinesToJson();
