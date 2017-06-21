@@ -3,7 +3,7 @@ package edd.floremipy.dto;
 public class ArticlePrixListDTO {
 
 	public String name;
-	public String Description;
+	public String description;
 	public float priceValue;
 	public int quantityInStock;
 	public int quantityOrder;
@@ -18,7 +18,7 @@ public class ArticlePrixListDTO {
 			int id, String img) {
 		super();
 		this.name = name;
-		Description = description;
+		this.description = description;
 		this.priceValue = priceValue;
 		this.quantityInStock = quantityInStock;
 		this.quantityOrder = quantityOrder;
@@ -44,11 +44,11 @@ public class ArticlePrixListDTO {
 	}
 
 	public String getDescription() {
-		return this.Description;
+		return this.description;
 	}
 
 	public void setDescription(String description) {
-		this.Description = description;
+		this.description = description;
 	}
 
 	public float getPriceValue() {
