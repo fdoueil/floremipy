@@ -48,11 +48,11 @@ public class ArticlePrixListDTOServiceImplementation implements ArticlePrixListD
 	
 	@Override
 	public ArrayList<ArticlePrixListDTO> initListeArticleBas(){
-		ArticlePrixListDTO articlePrixListDTO = new ArticlePrixListDTO();
-		this.fillWithMockedValue(articlePrixListDTO);
-		articlePrixListDTO.setName(articlePrixListDTO.getName() + " - Bas");
-		articlePrixListDTO.setId(articlePrixListDTO.getId() + 10);
-		this.listeInitBas.add(articlePrixListDTO);
+		//ArticlePrixListDTO articlePrixListDTO = new ArticlePrixListDTO();
+		//this.fillWithMockedValue(articlePrixListDTO);
+		//articlePrixListDTO.setName(articlePrixListDTO.getName() + " - Bas");
+		//articlePrixListDTO.setId(articlePrixListDTO.getId() + 10);
+		//this.listeInitBas.add(articlePrixListDTO);
 		return this.listeInitBas;
 	}
 
