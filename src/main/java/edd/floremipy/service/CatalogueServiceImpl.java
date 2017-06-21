@@ -24,7 +24,7 @@ public class CatalogueServiceImpl implements CatalogueServiceInterface {
 		List<CatalogueLineDTO> myCatalogLines = dao.findCatalogue();
 
 		Gson gson = new GsonBuilder().create();
-		StringBuffer sbLignesCatalogue = new StringBuffer("["); // ("[");
+		StringBuffer sbLignesCatalogue = new StringBuffer("'["); // ("[");
 
 		if (!(myCatalogLines.isEmpty())) {
 			for (CatalogueLineDTO catalogueLineDTO : myCatalogLines) {
@@ -36,7 +36,7 @@ public class CatalogueServiceImpl implements CatalogueServiceInterface {
 			}
 		}
 		sbLignesCatalogue.deleteCharAt(sbLignesCatalogue.length()-1);
-		sbLignesCatalogue.append("]");
+		sbLignesCatalogue.append("]'");
 		System.out.println(sbLignesCatalogue.toString());
 		return sbLignesCatalogue.toString();
 	}
