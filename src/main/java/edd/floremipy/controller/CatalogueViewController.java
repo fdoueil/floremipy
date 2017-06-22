@@ -19,8 +19,8 @@ public class CatalogueViewController {
 	CatalogueServiceInterface catalogueService;
 
     @RequestMapping(value="/products", method=RequestMethod.GET)
-    public String allProducts(){
-        return catalogueService.catalogLinesToJson();
+    public List<CatalogueLineDTO> allProducts(){
+        return catalogueService.listCatalogueLinesJson();
     }
 
 }
