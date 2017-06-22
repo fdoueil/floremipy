@@ -1,5 +1,6 @@
 package edd.floremipy.dao;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -12,20 +13,52 @@ import edd.floremipy.dto.ArticleDTO;
 import edd.floremipy.dto.CatalogueLineDTO;
 import edd.floremipy.model.Article;
 
-@Repository("ArticleDAORepository")
+@Repository("unArticleDAO")
 @Scope("singleton")
 public class ArticleDAOImplementation extends AbstractDAO implements ArticleDAOInterface {
 
 	@Override
-	public Article findById(int id) {
+	public Article findById(int parmId) {
 		Article retour=null;
 		EntityManager em = getEntityManager();
-		String q= "SELECT NEW edd.floremipy.dto.ArticleDTO(a.id, a.category, a.description, a.imgsrc, a.name, a.quantityInStock) "+
-		" FROM Article a where a.id = " + id;
-		Query reqInnerJoin = em.createQuery(q);
-		//log.info("Create query yahoo");
 		
-		retour = (Article) reqInnerJoin.getSingleResult();
+		// EN JPA, mais marche mal
+		String q= "SELECT a FROM Article a where a.id = :parmId";
+//		Query reqInnerJoin = em.createQuery(q);
+//		reqInnerJoin.setParameter("id", id);
+		//log.info("Create query yahoo");
+//		retour = (Article) reqInnerJoin.getSingleResult();
+//		retour = (Article)em.find(Article.class, id);
+		
+		// En SQL pur
+		String sqlPur = "SELECT article.id, article.category, article.description,article.imgsrc,article.name,article.quantityinstock FROM article WHERE article.id = " + parmId;
+		System.out.println(sqlPur);
+		Query reqInnerJoin = em.createNativeQuery(sqlPur);
+		List<Object[]> results = reqInnerJoin.getResultList();
+		System.out.println("nb result = " + results.size());
+		for (Object[] current : results) {
+			int id = ((Integer)current[0]).intValue();	
+			String category= (String)current[1];
+			String description =(String)current[2];
+			String imgsrc =(String)current[3];
+			String name = (String)current[4];
+			int stock = ((Integer)current[5]).intValue();
+			
+			System.out.println("article nom=" + name);
+
+			retour = new Article();
+			retour.setId(id);
+			retour.setCategory(category);
+			retour.setDescription(description);
+			retour.setImgsrc(imgsrc);
+			retour.setName(name);
+			retour.setQuantityInStock(stock);
+			//log.info(""+cl);
+			
+		}
+
+		
+
 				
 		return retour;
 	}

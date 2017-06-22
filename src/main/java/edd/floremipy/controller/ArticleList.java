@@ -45,7 +45,9 @@ public class ArticleList{
 	
 	@Autowired
 	ArticlePrixListDTOServiceImplementation articlePrixListDTOService;
-	CreerCommandeImplementation creerCommandeImplementation = new CreerCommandeImplementation();
+	
+	@Autowired
+	CreerCommandeImplementation creerCommandeImplementation;
 
 	public static final String CHAMP_IDUSERCONNECTED = "idUserConnected";
 	public static final String LISTE_ARTICLE_HAUT = "articlePrixDTOListeHaut";

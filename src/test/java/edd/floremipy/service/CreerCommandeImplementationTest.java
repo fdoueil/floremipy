@@ -34,6 +34,7 @@ public class CreerCommandeImplementationTest {
 	//CustomerOrderDAOInterface myCustomerOrderDAOMock = Mockito.mock(CustomerOrderDAOInterface.class);
 	ArticleDAOInterface myArticleDAOMock = Mockito.mock(ArticleDAOInterface.class);
 	CustomerDAOInterface myCustomerDAOMock = Mockito.mock(CustomerDAOInterface.class);
+	CustomerOrderDAOInterface myCustomerOrderDAOMock = Mockito.mock(CustomerOrderDAOInterface.class);
 	
 	@InjectMocks
 	CreerCommandeImplementation myCreerCommandeService = new CreerCommandeImplementation();
@@ -89,23 +90,14 @@ public class CreerCommandeImplementationTest {
 		Date uneDate=null;
 		long idCustomer=155;
 		long idAdress=0;
-		
 
-		
-		
-		// En fait le service crée, la commande pas besoin de mockito
-		// pour créer la commande, par contre il en faut un pour s'affranchir
-		// de la lecture du customer ou de l'adresse ou de l'article
-
-		//Mockito.when(myCustomerOrderDAOMock.ajouteCommande(uneDate, idCustomer, idAdress)).thenReturn(idCommande);	
-
-		
 		Mockito.when(myArticleDAOMock.findById(123)).thenReturn(article1);	
 		Mockito.when(myArticleDAOMock.findById(456)).thenReturn(article2);
 		
 		Mockito.when(myCustomerDAOMock.findById(idCustomer)).thenReturn(client1);
 		
-		// Cyril, si l'entitymanager est dans le service faut il le mocker aussi?????
+		// Pas de when pour myCustomerOrderDAOMock car ajoute commande retourne rien de significatif
+		// ici on fait un stub(bouchon) plutot qu'un mock
 		
 		
 		Customerorder laCommande = myCreerCommandeService.creeCommande(idCustomer, uneListe);

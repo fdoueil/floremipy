@@ -75,7 +75,7 @@ public class UserServiceImpl implements UserServiceInterface {
 
 		id = (long) 4;
 		String ident4 = "le_client";
-		Long idCustomer4 = (long) 40;
+		Long idCustomer4 = (long) 2;
 		User user4 = new User(id, ident4, "client@bl.com", "Cli#01", UserRole.CLIENT, idCustomer4);
 		userManagerUnique.listeDesUsers.put(ident4, user4);
 		System.out.println("avant:" + userManagerUnique.listeDesUsers.size());
