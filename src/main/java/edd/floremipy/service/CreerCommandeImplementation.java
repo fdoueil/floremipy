@@ -66,9 +66,8 @@ public class CreerCommandeImplementation implements CreerCommandeInterface {
 		
 		//on recupere le customer correspond a l'id
 		System.out.println("client id = " + idCustomerLogge);
-		clientCourant= unCustomerDAO.findById(idCustomerLogge);
-		//System.out.println("Client " + clientCourant.getName());
 		
+		clientCourant= unCustomerDAO.findById(idCustomerLogge);
 	
 		entiteCommande.setCustomer(clientCourant);	
 		// TODO findById sur AdressDAO

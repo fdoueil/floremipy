@@ -17,9 +17,12 @@ public class CustomerOrderDAOImpl  extends AbstractDAO implements CustomerOrderD
 	@Override
 	public long ajouteCommande(Customerorder uneCommande) {
 		System.out.println("Ajout d'un commande de " + uneCommande.getCustomerorderlines().size() + "lignes");
-		this.getEntityManager().getTransaction().begin();
+		System.out.println("Pour le client " + uneCommande.getCustomer());
+		System.out.println("Pour le client no " + uneCommande.getCustomer().getId());
+		
+		//this.getEntityManager().getTransaction().begin();
 		this.getEntityManager().persist(uneCommande);
-		this.getEntityManager().getTransaction().commit();
+		//this.getEntityManager().getTransaction().commit();
 		return 0;
 	}
 
