@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" charset="utf8" src="js/jquery-1.12.4.js"></script>
-<link rel="stylesheet" type="text/css"	href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+<link rel="stylesheet" type="text/css"	href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
 <link type="text/css" rel="stylesheet" href="css/floremipy.css" />
 <link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet"	href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
@@ -36,10 +36,9 @@
 	</div>
 
 	<div id="demo"></div>
-	<script type="text/javascript"
-		src="js/jquery-1.12.4.js"></script>
-	<script type="text/javascript"
-		src="js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="js/dataTables.bootstrap.min.js"></script>
 	<script type="text/javascript">
 		/*    {"id":123,"name":"olivier","category":"arbre","price":100.0,"stock":10,"description":"ceci est un olivier","imgsrc":"olivier.jpg"} */
 
