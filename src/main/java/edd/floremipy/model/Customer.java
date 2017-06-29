@@ -2,6 +2,7 @@ package edd.floremipy.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.util.List;
 
 
 /**
@@ -29,6 +30,10 @@ public class Customer implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="IdAdress")
 	private Adress adress;
+
+	//bi-directional many-to-one association to Customerorder
+	@OneToMany(mappedBy="customer")
+	private List<Customerorder> customerorders;
 
 	public Customer() {
 	}
@@ -79,6 +84,28 @@ public class Customer implements Serializable {
 
 	public void setAdress(Adress adress) {
 		this.adress = adress;
+	}
+
+	public List<Customerorder> getCustomerorders() {
+		return this.customerorders;
+	}
+
+	public void setCustomerorders(List<Customerorder> customerorders) {
+		this.customerorders = customerorders;
+	}
+
+	public Customerorder addCustomerorder(Customerorder customerorder) {
+		getCustomerorders().add(customerorder);
+		customerorder.setCustomer(this);
+
+		return customerorder;
+	}
+
+	public Customerorder removeCustomerorder(Customerorder customerorder) {
+		getCustomerorders().remove(customerorder);
+		customerorder.setCustomer(null);
+
+		return customerorder;
 	}
 
 }

@@ -4,7 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
+import javax.transaction.Transactional;
+@Transactional
 public class AbstractDAO implements Serializable {
 
 	@PersistenceContext

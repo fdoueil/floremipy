@@ -11,30 +11,43 @@ import com.google.gson.GsonBuilder;
 
 import edd.floremipy.dao.CatalogueDAOInterface;
 import edd.floremipy.dto.CatalogueLineDTO;
+import edd.floremipy.service.CatalogueServiceInterface;
 
 @Service("catalogueService")
-public class CatalogueServiceImpl implements CatalogueService {
-	
+public class CatalogueServiceImpl implements CatalogueServiceInterface {
+
 	@Autowired
 	CatalogueDAOInterface dao;
-	
+
+	public String catalogLinesToJson() {
+
+		List<CatalogueLineDTO> myCatalogLines = dao.findCatalogue();
+
+		Gson gson = new GsonBuilder().create();
+		StringBuffer sbLignesCatalogue = new StringBuffer("'["); // ("[");
+
+		if (!(myCatalogLines.isEmpty())) {
+			for (CatalogueLineDTO catalogueLineDTO : myCatalogLines) {
+				// convertir au format String JSON(P) chaque ligne du catalogue
+				// reçu
+				sbLignesCatalogue.append(catalogueLineDTO.lineToJson());
+				System.out.println("Ligne de catalogue : " + catalogueLineDTO.lineToJson());
+				sbLignesCatalogue.append(",");
+			}
+		}
+		sbLignesCatalogue.deleteCharAt(sbLignesCatalogue.length()-1);
+		sbLignesCatalogue.append("]'");
+		System.out.println(sbLignesCatalogue.toString());
+		return sbLignesCatalogue.toString();
+	}
 	
 	@Override
-	public String catalogLinesToJson() {
+	public List<CatalogueLineDTO> listCatalogueLinesJson(){
 		
-		List<CatalogueLineDTO> myCatalogLines = dao.findCatalogue();
+		List<CatalogueLineDTO> catalogueJsonLines = dao.findCatalogue();
+
+
+		return catalogueJsonLines;
 		
-		Gson gson = new GsonBuilder().create();
-		StringBuffer sbLignesCatalogue = new StringBuffer();
-		
-		if (!(myCatalogLines.isEmpty())){
-			for (CatalogueLineDTO catalogueLineDTO : myCatalogLines) {
-				//convertir au format String JSON(P) chaque ligne du catalogue reçu
-				//( "id/ref - ArticleName - Category - Price - QtyStock")
-				sbLignesCatalogue.append(catalogueLineDTO.toString());
-				System.out.println("Ligne de catalogue : " + catalogueLineDTO.toString());
-			}			
-		}
-		return gson.toJson(sbLignesCatalogue);
 	}
 }

@@ -5,14 +5,18 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
 import edd.floremipy.dto.ArticlePrixListDTO;
+import edd.floremipy.dto.UserDTO;
 import edd.floremipy.service.ArticlePrixListDTOServiceImplementation;
 import edd.floremipy.service.CreerCommandeImplementation;
 
@@ -20,6 +24,8 @@ import edd.floremipy.service.CreerCommandeImplementation;
 
 
 @Controller
+@SessionAttributes( value="userConnecte", types={UserDTO.class} )
+
 public class ArticleList{
 	private static final long serialVersionUID = 1L;
 
@@ -36,8 +42,12 @@ public class ArticleList{
 	Map<String, String> errors = new HashMap<String, String>();
 	ArrayList<ArticlePrixListDTO> articlePrixDTOListeHaut;
 	ArrayList<ArticlePrixListDTO> articlePrixDTOListeBas;
-	ArticlePrixListDTOServiceImplementation articlePrixListDTOService = new ArticlePrixListDTOServiceImplementation();
-	CreerCommandeImplementation creerCommandeImplementation = new CreerCommandeImplementation();
+	
+	@Autowired
+	ArticlePrixListDTOServiceImplementation articlePrixListDTOService;
+	
+	@Autowired
+	CreerCommandeImplementation creerCommandeImplementation;
 
 	public static final String CHAMP_IDUSERCONNECTED = "idUserConnected";
 	public static final String LISTE_ARTICLE_HAUT = "articlePrixDTOListeHaut";
@@ -116,13 +126,16 @@ public class ArticleList{
 	}
 
 	@RequestMapping(value = "/articleList/addCommande", method = RequestMethod.GET)
-	public RedirectView  addCommande(Model model) {
+	public RedirectView  addCommande(@ModelAttribute("userConnecte") UserDTO userLogge, Model model) {
+
+	
 		/* Init du log */
 		logger.info("addCommande");
 		System.out.println("addCommande");
 
 		if (this.articlePrixDTOListeBas != null){
-			long idCustomerLogge=0;  // A recuperer dans UserDTO chargé au login
+			long idCustomerLogge=userLogge.getIdCustomer();
+			System.out.println("customer courant = " + idCustomerLogge);
 			this.creerCommandeImplementation.creeCommande(idCustomerLogge , this.articlePrixDTOListeBas);
 			System.out.println("appel - articlePrixListDTOService AddCommand");
 		}

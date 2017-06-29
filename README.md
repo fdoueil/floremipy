@@ -13,6 +13,17 @@ Puis lancer le script floremipy_tu.sql (src/main/sql/)
 
 Le fichier application.properties dans src/main/resources permet de configurer l'accès bdd
 Il est ignoré par Git et donc est personnalisable pour chaque Dev :)
+Le contenu est :
+
+jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost/floremipy_tu
+jdbc.username=root
+jdbc.password=root
+spring.datasource.useSSL=false
+hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
+hibernate.hbm2ddl.auto=create-drop
+hibernate.show_sql = true
+hibernate.format_sql = true
 
 ### Mockito
 
@@ -20,10 +31,13 @@ JUnit Tests avec Mokito
 
 -->cf. CatalogueServiceImplTest.java
 
-1- Dans la classe Service, l'annotation @Service permet de déclarer le nom service :
+1/Dans la classe Service, l'annotation @Service permet de déclarer le nom service,
+et @Autowired sur la DAO permet d'autoriser le mock de la DAO nécessaire aux tests  :
 
 		@Service("catalogueService")
 		public class CatalogueServiceImpl implements CatalogueService {
+		@Autowired
+		CatalogueDAOInterface dao;
 
 2- Pour utiliser Mockito, ajouter l'annotation sur la classe de test :
 

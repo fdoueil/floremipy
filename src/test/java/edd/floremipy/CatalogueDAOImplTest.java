@@ -44,7 +44,7 @@ public class CatalogueDAOImplTest  {
 		log.info("testListCatalogue");
 		List<CatalogueLineDTO> actual=catalogueDAOImpl.findCatalogue();
 		for (CatalogueLineDTO catalogueLineDTO : actual) {
-			log.debug(catalogueLineDTO.getId() +' '+catalogueLineDTO.getName() +' '+catalogueLineDTO.getCategory() +' '+catalogueLineDTO.getStock() +' '+catalogueLineDTO.getId() +' '+catalogueLineDTO.getPrice());
+			log.debug(catalogueLineDTO.getId() +' '+catalogueLineDTO.getName() +' '+catalogueLineDTO.getCategory() +' '+catalogueLineDTO.getStock() +' '+catalogueLineDTO.getId() +' '+catalogueLineDTO.getPrice() +' '+catalogueLineDTO.getDescription() +' '+catalogueLineDTO.getImgsrc());
 		}
 	}
 }
