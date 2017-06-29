@@ -77,16 +77,16 @@
 					dataSrc:''
 					},
 				columns: [ {
-					title: "id",
+					title: "ref",
 					data: "id"
 				}, {
-					title: "name",
+					title: "nom",
 					data: "name"
 				}, {
-					title: "category",
+					title: "catégorie",
 					data: "category"
 				}, {
-					title: "price",
+					title: "prix",
 					data: "price"
 				}, {
 					title: "stock",
@@ -95,9 +95,11 @@
 					title: "description",
 					data: "description"
 				}, {
-					title: "imgsrc",
-					data: "imgsrc"
-				} ]
+					title: "image",
+                    "render": function (data, type, JsonResultRow, meta) {
+                        return '<img src="/images/'+JsonResultRow.imgsrc+'" width="100px">';
+                    }
+                } ]
 			});
 		});
 		
