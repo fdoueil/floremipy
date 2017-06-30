@@ -7,10 +7,6 @@
 		<img src="/images/logo_floremipy.png">
 		<ul class="nav nav-pills">
 				 <li><a id="menuAccueil" href=<c:url value="/"/>>Accueil</a></li>
-
-				 <sec:authorize access="! isAuthenticated()">
-                 	<li><a id="menuLogin" href=<c:url value="/login"/>>Connexion</a></li>
-                 </sec:authorize>
                  <sec:authorize access="isAuthenticated()">
                  	<li><a id="menuLogout" href=<c:url value="/logout"/>>Déconnexion</a></li>
                  </sec:authorize>
