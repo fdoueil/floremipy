@@ -14,12 +14,12 @@
                  <sec:authorize access="isAuthenticated()">
                  	<li><a id="menuLogout" href=<c:url value="/logout"/>>Déconnexion</a></li>
                  </sec:authorize>
-				 <sec:authorize access="hasRole('CLIENT')">
+				 <sec:authorize access="hasAnyRole('ADMIN','CLIENT')">
                  	<li><a id="menuArticleList" href=<c:url value="/articleList"/>>Liste des articles</a></li>
                  	<li><a id="menuChoixModeLivraison" href=<c:url value="/choixModeLivraison"/>>Choix du mode de livraison</a></li>
                  	<li><a id="menuChoixAdresseLivraison" href=<c:url value="/choixAdresseLivraison"/>>Choix de l'adresse de livraison</a></li>
                  </sec:authorize>
-                 <sec:authorize access="hasRole('JARDINIER')">
+                 <sec:authorize access="hasAnyRole('ADMIN','JARDINIER')">
                  	<li><a id="menuCommandeList" href=<c:url value="commandeList"/>>Liste des livraisons du jour</a></li>
                  </sec:authorize>
 		</ul>
