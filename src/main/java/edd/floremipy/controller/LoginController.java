@@ -22,5 +22,4 @@ public class LoginController {
 		logger.info("getLogin");
 		return "login";
 	}
-
 }
