@@ -15,7 +15,7 @@ import edd.floremipy.service.UserServiceImpl;
 @Controller
 @SessionAttributes( value="userConnecte", types={UserDTO.class} )
 public class LogoutController {
-	private final static Logger logger = Logger.getLogger(LogoutController.class.getName());
+	/*private final static Logger logger = Logger.getLogger(LogoutController.class.getName());
 
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 
@@ -26,6 +26,6 @@ public class LogoutController {
 		model.addAttribute("userConnecte", new UserDTO());		
 		
 		return "index";
-		}
+		}*/
 }
 

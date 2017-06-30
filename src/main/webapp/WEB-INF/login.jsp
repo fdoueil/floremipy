@@ -25,14 +25,14 @@
 					<div class="container" style="width: 400px;">
 						<div class="form-group">
 							<label for="email">Login <span class="requis">*</span></label>
-							<input type="text" class="form-control" name="login" id="login"
+							<input type="text" class="form-control" name="username" id="login"
 								value="${form.login}" size="20" maxlength="60" /> <span
 								class="erreur">${errorLogin}</span> <br/>
 						</div>
 		
 						<div class="form-group">
 							<label for="pwd">Mot de passe <span class="requis">*</span></label>
-							<input type="password" class="form-control" name="pwd"
+							<input type="password" class="form-control" name="password"
 								id="pwd" value="" size="20" maxlength="20" /> <span
 								class="erreur">${errorMotDePasse}</span> <br/>
 						</div>

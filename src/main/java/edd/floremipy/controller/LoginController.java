@@ -18,14 +18,12 @@ public class LoginController {
 	private final static Logger logger = Logger.getLogger(LoginController.class.getName());
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-
 	public String getLogin(Model model) {
 		logger.info("getLogin");
 		return "login";
 	}
 
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
-
+	/*@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String postLogin(@RequestParam(value = "login") String login, @RequestParam("pwd") String pwd, Model model) {
 		logger.info("postLogin");
 
@@ -56,5 +54,5 @@ public class LoginController {
 
 			return "login";
 		}
-	}
+	}*/
 }
