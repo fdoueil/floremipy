@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -48,6 +49,7 @@ public class ArticleList{
 	public static final String LISTE_ARTICLE_HAUT = "articlePrixDTOListeHaut";
 	public static final String LISTE_ARTICLE_BAS = "articlePrixDTOListeBas";
 
+	@Secured("CLIENT")
 	@RequestMapping(value = "/articleList", method = RequestMethod.GET)
 	public String getArticleList(Model model, Integer idCustomer) {
 		/* Init du log */
