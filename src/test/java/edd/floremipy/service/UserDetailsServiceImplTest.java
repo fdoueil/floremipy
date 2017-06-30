@@ -8,8 +8,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import edd.floremipy.dto.UserRoleDTO;
@@ -30,7 +30,7 @@ public class UserDetailsServiceImplTest {
 		assertEquals("adm",userRoleDto.getPassword());
 	}
 	
-	@Test(expected = BadCredentialsException.class)
+	@Test(expected = UsernameNotFoundException.class)
 	public void testNonExistUser() {
 		UserRoleDTO userRoleDto = (UserRoleDTO) userDetailService.loadUserByUsername("xxx");
 	}

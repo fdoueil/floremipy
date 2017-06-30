@@ -4,7 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
 import edd.floremipy.model.UserRoleDb;
@@ -27,7 +27,7 @@ public class UserRoleDAO {
 		} catch (NoResultException e) {
 			//e.printStackTrace();
 			//LOG
-			throw new BadCredentialsException(String.format("User {0} inexistant !",userName));
+			throw new UsernameNotFoundException(String.format("User {0} inexistant !",userName));
 		}
 		
 		return userRole;
