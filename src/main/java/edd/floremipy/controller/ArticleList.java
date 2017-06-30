@@ -49,7 +49,7 @@ public class ArticleList{
 	public static final String LISTE_ARTICLE_HAUT = "articlePrixDTOListeHaut";
 	public static final String LISTE_ARTICLE_BAS = "articlePrixDTOListeBas";
 
-	@Secured({"ADMIN","CLIENT"})
+	@Secured({"ROLE_ADMIN", "ROLE_CLIENT"})
 	@RequestMapping(value = "/articleList", method = RequestMethod.GET)
 	public String getArticleList(Model model, Integer idCustomer) {
 		/* Init du log */

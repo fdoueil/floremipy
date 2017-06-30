@@ -36,7 +36,7 @@ public class ConsulterListeCommande{
 	public static final String CHAMP_IDUSERCONNECTED = "idUserConnected";
 	public static final String CHAMP_COMMANDLISTDTO = "COMMANDLISTDTO";
 
-	@Secured({"ADMIN","JARDINIER"})
+	@Secured({"ROLE_ADMIN", "ROLE_JARDINIER"})
 	@RequestMapping(value = "/commandeList", method = RequestMethod.GET)
 	public String getCommandeList(Model model, Integer idCustomer) {
 		/* Init du log */
