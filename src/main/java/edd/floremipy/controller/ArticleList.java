@@ -14,18 +14,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.view.RedirectView;
-
 import edd.floremipy.dto.ArticlePrixListDTO;
-import edd.floremipy.dto.UserDTO;
+import edd.floremipy.dto.UserRoleDTO;
 import edd.floremipy.service.ArticlePrixListDTOServiceImplementation;
 import edd.floremipy.service.CreerCommandeImplementation;
 
-
-
-
 @Controller
-@SessionAttributes( value="userConnecte", types={UserDTO.class} )
-
+@SessionAttributes( value="userConnecte", types={UserRoleDTO.class} )
 public class ArticleList{
 	private static final long serialVersionUID = 1L;
 
@@ -126,7 +121,7 @@ public class ArticleList{
 	}
 
 	@RequestMapping(value = "/articleList/addCommande", method = RequestMethod.GET)
-	public RedirectView  addCommande(@ModelAttribute("userConnecte") UserDTO userLogge, Model model) {
+	public RedirectView  addCommande(@ModelAttribute("userConnecte") UserRoleDTO userLogge, Model model) {
 
 	
 		/* Init du log */
@@ -134,7 +129,7 @@ public class ArticleList{
 		System.out.println("addCommande");
 
 		if (this.articlePrixDTOListeBas != null){
-			long idCustomerLogge=userLogge.getIdCustomer();
+			long idCustomerLogge=userLogge.getId();
 			System.out.println("customer courant = " + idCustomerLogge);
 			this.creerCommandeImplementation.creeCommande(idCustomerLogge , this.articlePrixDTOListeBas);
 			System.out.println("appel - articlePrixListDTOService AddCommand");
