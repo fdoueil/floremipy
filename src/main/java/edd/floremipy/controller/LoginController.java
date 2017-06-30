@@ -23,36 +23,4 @@ public class LoginController {
 		return "login";
 	}
 
-	/*@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String postLogin(@RequestParam(value = "login") String login, @RequestParam("pwd") String pwd, Model model) {
-		logger.info("postLogin");
-
-		System.out.println("login = " + login);
-		System.out.println("pwd = " + pwd);
-		String messageLogin = null;
-		String messagePwd = null;
-
-		// on teste le login et pwd saisis
-		String retour = UserServiceImpl.getInstance().authenticate(login, pwd);
-		System.out.println("retour = " + retour);
-
-		if (retour == "PB:LoginController:Erreur 001:Utilisateur inconnu") {
-			messageLogin = "login utilisateur inconnu";
-		} else if (retour == "PB:Pwd:Erreur 001:Mot de passe incorrect pour cet utilisateur") {
-			messagePwd = "Mot de passe incorrect pour cet utilisateur";
-		}
-
-		// user trouvé
-		if (retour == login) {
-			UserDTO userConnecte = UserServiceImpl.getInstance().getUser(login);
-			model.addAttribute("userConnecte", userConnecte);
-			return "index";
-		} else // user non trouvé
-		{
-			model.addAttribute("errorLogin", messageLogin);
-			model.addAttribute("errorMotDePasse", messagePwd);
-
-			return "login";
-		}
-	}*/
 }
