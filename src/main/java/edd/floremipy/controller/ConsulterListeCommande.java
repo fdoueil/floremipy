@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
 
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,7 +36,7 @@ public class ConsulterListeCommande{
 	public static final String CHAMP_IDUSERCONNECTED = "idUserConnected";
 	public static final String CHAMP_COMMANDLISTDTO = "COMMANDLISTDTO";
 
-
+	@Secured({"ADMIN","JARDINIER"})
 	@RequestMapping(value = "/commandeList", method = RequestMethod.GET)
 	public String getCommandeList(Model model, Integer idCustomer) {
 		/* Init du log */
