@@ -16,7 +16,7 @@ public class UserRoleDAO {
 	@PersistenceContext
 	private EntityManager entityManager;
 
-	public UserRoleDb findByUserName(String userName) {
+	public UserRoleDb findByUserName(String userName) throws UsernameNotFoundException{
 
 		String q = "SELECT u FROM UserRoleDb u where upper(u.username) = upper(:userName)";
 		Query reqInnerJoin = this.entityManager.createQuery(q);
