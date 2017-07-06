@@ -1,7 +1,9 @@
+DROP TABLE `floremipy_tu`.`user_role`;
+
 CREATE TABLE `floremipy_tu`.`user_role` (
   `ID` INT NOT NULL,
   `username` VARCHAR(45) NULL,
-  `password` VARCHAR(45) NULL,
+  `password` VARCHAR(255) NULL,
   `role` VARCHAR(45) NULL)
 COMMENT = 'user with roles';
 
