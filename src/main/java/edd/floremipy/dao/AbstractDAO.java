@@ -1,16 +1,15 @@
 package edd.floremipy.dao;
 
-import java.io.Serializable;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 @Transactional
-public class AbstractDAO implements Serializable {
+public class AbstractDAO  {
+
 
 	@PersistenceContext
-	EntityManager entityManager;
-	
+	private EntityManager entityManager;
+
 	public EntityManager getEntityManager(){
 		return this.entityManager;
 	}
