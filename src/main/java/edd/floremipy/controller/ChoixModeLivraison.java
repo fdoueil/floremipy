@@ -36,8 +36,7 @@ public class ChoixModeLivraison{
 	@RequestMapping(value = "/choixModeLivraison", method = RequestMethod.GET)
 	public String getChoixModeLivraison(Model model, Integer idCustomer) {
 		/* Init du log */
-		logger.info("getChoixModeLivraison");
-		System.out.println("getChoixModeLivraison");
+		logger.info("getChoixModeLivraison");		
 
 		if (idCustomer != null){
 			this.idCustomer = idCustomer;
@@ -55,14 +54,11 @@ public class ChoixModeLivraison{
 	@RequestMapping(value = "/choixModeLivraison/validate/{idTypeModeLivraison}", method = RequestMethod.GET)
 	public RedirectView  validate(@PathVariable Integer idTypeModeLivraison, Model model) {
 		/* Init du log */
-		logger.info("validate");
-		System.out.println("validate");
-		System.out.println("idTypeModeLivraison" + idTypeModeLivraison);
+		logger.info("validate");		
 
 		if (idTypeModeLivraison != null){
 			this.idTypeModeLivraison = idTypeModeLivraison;
-			this.creerCommandeImplementation.selectModeLivraison(TypeModeLivraison.getTypeModeLivraison(this.idTypeModeLivraison));
-			System.out.println("Choix Mode de livraison  :" +idTypeModeLivraison);
+			this.creerCommandeImplementation.selectModeLivraison(TypeModeLivraison.getTypeModeLivraison(this.idTypeModeLivraison));			
 		}
 
 		model.addAttribute(CHAMP_IDTYPEMODELIVRAISON,this.idTypeModeLivraison);
