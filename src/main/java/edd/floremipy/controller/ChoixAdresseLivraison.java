@@ -41,7 +41,6 @@ public class ChoixAdresseLivraison{
 	public String getChoixAdresseLivraison(Model model, Integer idCustomer) {
 		/* Init du log */
 		logger.info("getChoixAdresseLivraison");
-		System.out.println("getChoixAdresseLivraison");
 
 		if (idCustomer != null){
 			this.idCustomer = idCustomer;
@@ -66,8 +65,6 @@ public class ChoixAdresseLivraison{
 	public RedirectView  validate(@PathVariable Integer idAdresseLivraison,@PathVariable String locationAdresseLivraison, @PathVariable String zipCodeAdresseLivraison, @PathVariable String cityAdresseLivraison, Model model) {
 		/* Init du log */
 		logger.info("validate");
-		System.out.println("validate");
-		System.out.println("idAdresseLivraison" + idAdresseLivraison);
 
 		this.adresseLivraison.setLocation(locationAdresseLivraison);
 		this.adresseLivraison.setZipCode(zipCodeAdresseLivraison);
@@ -76,7 +73,6 @@ public class ChoixAdresseLivraison{
 		if (idAdresseLivraison != null){
 			this.idAdresseLivraison = idAdresseLivraison;
 			this.creerAdresseImplementation.majAdresse(this.idAdresseLivraison,this.adresseLivraison.getLocation(),this.adresseLivraison.getZipCode(), this.adresseLivraison.getCity());
-			System.out.println("Création adresse");
 		} else
 		{
 			this.adresseLivraison = this.creerAdresseImplementation.creerAdresse(this.adresseLivraison.getLocation(),this.adresseLivraison.getZipCode(), this.adresseLivraison.getCity());

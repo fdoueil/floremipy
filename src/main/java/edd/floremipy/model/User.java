@@ -9,7 +9,6 @@ public class User {
 	private UserRole role;   
 	private Long idCustomer;
 	
-	
 	public User(Long id, String identifiant, String email, String pwd, UserRole unRole, Long idCustomer) {
 		super();
 		Id = id;
@@ -27,8 +26,6 @@ public class User {
 	public void setRole(UserRole role) {
 		this.role = role;
 	}
-
-	
 
 	public Long getId() {
 		return Id;
