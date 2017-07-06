@@ -6,7 +6,7 @@
 	<groupId>edd</groupId>
 	<artifactId>floremipy</artifactId>
 	<version>0.0.2-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>FloreMipy</name>
 	<description>FloreMipy project</description>
